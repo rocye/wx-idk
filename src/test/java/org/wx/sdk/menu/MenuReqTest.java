@@ -128,18 +128,6 @@ public class MenuReqTest {
         SelfmenuInfoGetRespone selfmenuInfoGetRes = wxClient.excute(selfmenuInfoGetReq);
         System.out.println(selfmenuInfoGetRes.getBody());
     }
-    
-    /**
-     * 测试批量获取永久其它类型（图片、语音、视频）素材列表
-     */
-    @Test
-    public void testMiguMoviePerpetualMaterialBatGetReq() {
-    	String accessToken = "Bp6ZWnwpmdajHwApi8scPk8TdYCRjwiyrx3x5l_IDfDJ8wClFfh1SPZT8wRWoFnom99on01mFkUyveVUA9g8bGjwMj_z7q9RGTKZwrUCRAkqsTcrdteOJ_vcPxwL6vsjYTVfABABWY";
-    	WxClient wxClient = new WxClient(accessToken);
-        PerpetualMaterialBatGetRequest materialBatGetReq = new PerpetualMaterialBatGetRequest("image", 168, 20);
-        PerpetualMaterialBatGetRespone materialBatGetRes = wxClient.excute(materialBatGetReq);
-        System.out.println(materialBatGetRes.getBody());
-    }
-    
+
     
 }
