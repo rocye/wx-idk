@@ -10,8 +10,7 @@ import org.wx.sdk.statistic.object.UserCumulate;
  * @version 2017-09-29
  */
 public class GetUserCumulateRespone extends Response {
-	private static final long serialVersionUID = -2082083617305857141L;
-	
+
 	private List<UserCumulate> list;
 
 	public List<UserCumulate> getList() {

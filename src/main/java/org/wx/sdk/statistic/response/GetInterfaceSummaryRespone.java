@@ -10,8 +10,7 @@ import org.wx.sdk.statistic.object.InterfaceSummary;
  * @version 2017-10-09
  */
 public class GetInterfaceSummaryRespone extends Response {
-	private static final long serialVersionUID = -5154098750427770311L;
-	
+
 	private List<InterfaceSummary> list;
 
 	public List<InterfaceSummary> getList() {

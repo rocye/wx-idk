@@ -234,8 +234,41 @@ XXXRespone：响应实体主要用于接收请求返回<br>
 ## 64.关闭已群发文章评论
 #### 原接口地址：`https://api.weixin.qq.com/cgi-bin/comment/close?access_token=ACCESS_TOKEN`
 #### 本工具包类：CommentCloseRequest & CommentRespone
-## 65.关闭已群发文章评论
+## 65.查看指定文章的评论数据
 #### 原接口地址：`https://api.weixin.qq.com/cgi-bin/comment/list?access_token=ACCESS_TOKEN`
 #### 本工具包类：CommentListRequest & CommentListRespone
+## 66.将评论标记精选
+#### 原接口地址：`https://api.weixin.qq.com/cgi-bin/comment/markelect?access_token=ACCESS_TOKEN`
+#### 本工具包类：CommentMarkelectRequest & CommentRespone
+## 67.将评论取消精选
+#### 原接口地址：`https://api.weixin.qq.com/cgi-bin/comment/unmarkelect?access_token=ACCESS_TOKEN`
+#### 本工具包类：CommentUnmarkelectRequest & CommentRespone
+## 68.删除评论
+#### 原接口地址：`https://api.weixin.qq.com/cgi-bin/comment/delete?access_token=ACCESS_TOKEN`
+#### 本工具包类：CommentDeleteRequest & CommentRespone
+## 69.回复评论
+#### 原接口地址：`https://api.weixin.qq.com/cgi-bin/comment/reply/add?access_token=ACCESS_TOKEN`
+#### 本工具包类：CommentReplyAddRequest & CommentRespone
+## 70.删除回复
+#### 原接口地址：`https://api.weixin.qq.com/cgi-bin/comment/reply/delete?access_token=ACCESS_TOKEN`
+#### 本工具包类：CommentReplyDeleteRequest & CommentRespone
 ----
-
+## 71.创建门店
+#### 原接口地址：`http://api.weixin.qq.com/cgi-bin/poi/addpoi?access_token=TOKEN`
+#### 本工具包类：AddPoiRequest & AddPoiRespone
+## 72.查询门店信息
+#### 原接口地址：`http://api.weixin.qq.com/cgi-bin/poi/getpoi?access_token=TOKEN`
+#### 本工具包类：GetPoiRequest & GetPoiRespone
+## 73.查询门店列表
+#### 原接口地址：`https://api.weixin.qq.com/cgi-bin/poi/getpoilist?access_token=TOKEN`
+#### 本工具包类：GetPoiListRequest & GetPoiListRespone
+## 74.修改门店服务信息
+#### 原接口地址：`https://api.weixin.qq.com/cgi-bin/poi/updatepoi?access_token=TOKEN`
+#### 本工具包类：UpdatePoiRequest & UpdatePoiRespone
+## 75.删除门店
+#### 原接口地址：`https://api.weixin.qq.com/cgi-bin/poi/delpoi?access_token=TOKEN`
+#### 本工具包类：DelPoiRequest & DelPoiRespone
+## 76.门店类目表
+#### 原接口地址：`http://api.weixin.qq.com/cgi-bin/poi/getwxcategory?access_token=TOKEN`
+#### 本工具包类：GetPoiCategoryRequest & GetPoiCategoryRespone
+----

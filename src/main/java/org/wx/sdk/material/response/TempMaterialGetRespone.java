@@ -8,8 +8,7 @@ import org.wx.sdk.base.Response;
  * @version 2016-04-08
  */
 public class TempMaterialGetRespone extends Response {
-    private static final long serialVersionUID = 8347735135797344129L;
-    
+
     /** 下载的文件名 */
     private String fileName;
 

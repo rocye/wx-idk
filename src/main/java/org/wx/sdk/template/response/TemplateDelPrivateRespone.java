@@ -8,6 +8,5 @@ import org.wx.sdk.base.Response;
  * @version 2017-08-22
  */
 public class TemplateDelPrivateRespone extends Response {
-	private static final long serialVersionUID = -6605089652294740862L;
-	
+
 }

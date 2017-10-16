@@ -10,8 +10,7 @@ import org.wx.sdk.base.Response;
  * @version 2016-03-31
  */
 public class IpListGetRespone extends Response {
-    private static final long serialVersionUID = 2065018509637757889L;
-    
+
     /** 微信服务器IP地址列表 */
     private List<String> ip_list;
 

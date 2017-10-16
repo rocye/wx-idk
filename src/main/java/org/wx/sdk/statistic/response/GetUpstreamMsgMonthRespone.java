@@ -10,8 +10,7 @@ import org.wx.sdk.statistic.object.UpstreamMsg;
  * @version 2017-10-09
  */
 public class GetUpstreamMsgMonthRespone extends Response {
-	private static final long serialVersionUID = 7693017630426143955L;
-	
+
 	private List<UpstreamMsg> list;
 
 	public List<UpstreamMsg> getList() {

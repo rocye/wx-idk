@@ -8,6 +8,5 @@ import org.wx.sdk.base.Response;
  * @version 2016-09-03
  */
 public class ConditionalDeleteRespone extends Response {
-    private static final long serialVersionUID = -4594140942871575482L;
-    
+
 }

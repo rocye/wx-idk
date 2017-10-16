@@ -12,8 +12,7 @@ import org.wx.sdk.user.object.OpenidList;
  * @version 2017-02-14
  */
 public class TagUserListGetRespone extends Response {
-	private static final long serialVersionUID = -4454688818730130307L;
-	
+
 	/** 获取的粉丝数量 */
     private Integer count;
     /** 列表数据，OPENID的列表 */

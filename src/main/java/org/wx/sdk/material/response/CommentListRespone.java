@@ -11,8 +11,7 @@ import org.wx.sdk.material.object.Comment;
  * @version 2017.10.10
  */
 public class CommentListRespone extends Response {
-	private static final long serialVersionUID = -8224575959365279808L;
-	
+
 	/** 总数，非comment的size */
 	private Integer total;
 	/** 文章的评论列表 */

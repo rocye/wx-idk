@@ -10,8 +10,7 @@ import org.wx.sdk.material.object.MediaItem;
  * @version 2016-06-27
  */
 public class PerpetualMaterialBatGetRespone extends Response {
-    private static final long serialVersionUID = 1087619982552143409L;
-    
+
     /** 该类型的素材的总数 */
     private Integer total_count;
     /** 本次调用获取的素材的数量 */

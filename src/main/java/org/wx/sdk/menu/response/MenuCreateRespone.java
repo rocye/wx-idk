@@ -8,6 +8,5 @@ import org.wx.sdk.base.Response;
  * @version 2016-08-16
  */
 public class MenuCreateRespone extends Response {
-    private static final long serialVersionUID = 6500231422675694310L;
-    
+
 }

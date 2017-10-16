@@ -8,8 +8,7 @@ import org.wx.sdk.base.Response;
  * @version 2016-04-12
  */
 public class NewsInnerImgAddRespone extends Response {
-    private static final long serialVersionUID = 1140366440595903998L;
-    
+
     /** 上传图片的URL */
     private String url;
 

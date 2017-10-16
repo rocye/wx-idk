@@ -12,8 +12,7 @@ import org.wx.sdk.menu.object.WXMenu;
  * @version 2016-08-31
  */
 public class MenuGetRespone extends Response {
-    private static final long serialVersionUID = 6500231422675694310L;
-    
+
     /** 默认菜单 */
     private WXMenu menu;
     /** 个性化菜单列表 */

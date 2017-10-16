@@ -10,8 +10,7 @@ import org.wx.sdk.statistic.object.UserShare;
  * @version 2017-09-30
  */
 public class GetUserShareRespone extends Response {
-	private static final long serialVersionUID = 3480380094751531618L;
-	
+
 	private List<UserShare> list;
 
 	public List<UserShare> getList() {

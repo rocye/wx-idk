@@ -9,8 +9,7 @@ import org.wx.sdk.template.object.Industry;
  * @version 2017-08-22
  */
 public class TemplateGetIndustryRespone extends Response {
-	private static final long serialVersionUID = -1635877497850205986L;
-	
+
 	/** 帐号设置的主营行业 */
 	private Industry primary_industry;
 	/** 帐号设置的副营行业 */

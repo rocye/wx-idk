@@ -8,8 +8,7 @@ import org.wx.sdk.base.Response;
  * @version 2016-09-29
  */
 public class MassSendGetRespone extends Response {
-    private static final long serialVersionUID = -8980059094306938253L;
-    
+
     /** 群发消息后返回的消息id */
     private Long msg_id;
     /** 消息发送后的状态，SEND_SUCCESS表示发送成功 */

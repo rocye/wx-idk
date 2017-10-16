@@ -8,6 +8,5 @@ import org.wx.sdk.base.Response;
  * @version 2016-08-16
  */
 public class MenuDeleteRespone extends Response {
-    private static final long serialVersionUID = 6611988355980646750L;
-    
+
 }

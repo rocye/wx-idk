@@ -8,8 +8,7 @@ import org.wx.sdk.base.Response;
  * @version 2016-03-31
  */
 public class AccessTokenGetRespone extends Response {
-    private static final long serialVersionUID = -8102775273973622057L;
-    
+
     /** 获取到的凭证 */
     private String access_token;
     /** 凭证有效时间，单位：秒 */

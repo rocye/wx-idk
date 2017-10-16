@@ -6,7 +6,7 @@ import org.wx.sdk.base.Request;
 import org.wx.sdk.material.response.CommentListRespone;
 
 /**
- * 关闭已群发文章评论请求对象
+ * 查看指定文章的评论数据请求对象
  * @author Rocye
  * @version 2017.10.10
  */

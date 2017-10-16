@@ -8,8 +8,7 @@ import org.wx.sdk.base.Response;
  * @version 2016-06-27
  */
 public class PerpetualMaterialCountRespone extends Response {
-    private static final long serialVersionUID = -3693972517683318858L;
-    
+
     /** 语音总数量 */
     private Integer voice_count;
     /** 视频总数量 */

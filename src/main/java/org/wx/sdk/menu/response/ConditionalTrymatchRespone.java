@@ -9,8 +9,7 @@ import org.wx.sdk.menu.object.WXMenu;
  * @version 2016-09-03
  */
 public class ConditionalTrymatchRespone extends Response {
-    private static final long serialVersionUID = -726749650368256814L;
-    
+
     /** 匹配上的菜单配置 */
     private WXMenu menu;
 

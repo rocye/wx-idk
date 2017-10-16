@@ -9,8 +9,7 @@ import org.wx.sdk.user.object.OpenidList;
  * @version 2017-08-22
  */
 public class BlackListGetRespone extends Response {
-	private static final long serialVersionUID = -4581748541892813120L;
-	
+
 	/** 关注该公众账号的总用户数 */
     private Integer total;
     /** 拉取的OPENID个数，最大值为10000 */

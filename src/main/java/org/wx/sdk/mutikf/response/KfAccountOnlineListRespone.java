@@ -10,8 +10,7 @@ import org.wx.sdk.mutikf.object.KfOnline;
  * @version 2016-08-09
  */
 public class KfAccountOnlineListRespone extends Response {
-    private static final long serialVersionUID = 5540555095724707780L;
-    
+
     /** 在线客服基本信息列表 */
     private List<KfOnline> kf_online_list;
 

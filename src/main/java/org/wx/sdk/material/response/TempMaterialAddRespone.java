@@ -8,8 +8,7 @@ import org.wx.sdk.base.Response;
  * @version 2016-04-08
  */
 public class TempMaterialAddRespone extends Response {
-    private static final long serialVersionUID = 1684953325284854386L;
-    
+
     /** 媒体文件类型，分别有图片image、语音voice、视频video和缩略图thumb，主要用于视频与音乐格式的缩略图 */
     private String type;
     /** 媒体文件上传后，获取时的唯一标识 */

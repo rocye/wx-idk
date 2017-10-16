@@ -9,8 +9,7 @@ import org.wx.sdk.user.object.OpenidList;
  * @version 2016-10-27
  */
 public class UserListGetRespone extends Response {
-    private static final long serialVersionUID = 1443153651535162840L;
-    
+
     /** 关注该公众账号的总用户数 */
     private Integer total;
     /** 拉取的OPENID个数，最大值为10000 */

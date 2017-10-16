@@ -8,10 +8,8 @@ import org.wx.sdk.base.Response;
  * @version 2016-04-12
  */
 public class NewsAddRespone extends Response {
-    private static final long serialVersionUID = -3336647331605122090L;
-    /**
-     * 新增的永久图文的media_id
-     */
+
+    /** 新增的永久图文的media_id */
     private String media_id;
 
     public String getMedia_id() {

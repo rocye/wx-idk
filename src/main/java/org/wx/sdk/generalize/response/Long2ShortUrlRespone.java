@@ -8,8 +8,7 @@ import org.wx.sdk.base.Response;
  * @version 2016-10-27
  */
 public class Long2ShortUrlRespone extends Response {
-    private static final long serialVersionUID = -5554680907963811373L;
-    
+
     /** 短链接 */
     private String short_url;
 

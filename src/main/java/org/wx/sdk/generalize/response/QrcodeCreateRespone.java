@@ -8,8 +8,7 @@ import org.wx.sdk.base.Response;
  * @version 2017-08-23
  */
 public class QrcodeCreateRespone extends Response {
-	private static final long serialVersionUID = -8733807787289181882L;
-	
+
 	/** 获取的二维码ticket，凭借此ticket可以在有效时间内换取二维码。 */
     private String ticket;
     /** 该二维码有效时间，以秒为单位。 最大不超过2592000（即30天）。 */

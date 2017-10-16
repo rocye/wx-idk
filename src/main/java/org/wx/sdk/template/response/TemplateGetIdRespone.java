@@ -8,8 +8,7 @@ import org.wx.sdk.base.Response;
  * @version 2017-08-22
  */
 public class TemplateGetIdRespone extends Response {
-	private static final long serialVersionUID = 7918959947236274448L;
-	
+
 	/** 模板库中模板的编号，有“TM**”和“OPENTMTM**”等形式 */
 	private String template_id;
 

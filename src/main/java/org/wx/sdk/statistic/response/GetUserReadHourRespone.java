@@ -10,8 +10,7 @@ import org.wx.sdk.statistic.object.UserReadHour;
  * @version 2017-09-30
  */
 public class GetUserReadHourRespone extends Response {
-	private static final long serialVersionUID = 6891912876452025508L;
-	
+
 	private List<UserReadHour> list;
 
 	public List<UserReadHour> getList() {

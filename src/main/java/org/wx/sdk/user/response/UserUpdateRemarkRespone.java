@@ -8,6 +8,5 @@ import org.wx.sdk.base.Response;
  * @version 2016-10-27
  */
 public class UserUpdateRemarkRespone extends Response {
-    private static final long serialVersionUID = -2155510727915498597L;
-    
+
 }

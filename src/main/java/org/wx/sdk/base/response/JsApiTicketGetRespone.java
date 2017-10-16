@@ -8,8 +8,7 @@ import org.wx.sdk.base.Response;
  * @version 2017-02-21
  */
 public class JsApiTicketGetRespone extends Response {
-	private static final long serialVersionUID = -6253453467321711585L;
-	
+
 	/** 获取到的凭证 */
 	private String ticket;
 	/** 凭证有效时间，单位：秒  */

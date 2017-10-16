@@ -10,8 +10,7 @@ import org.wx.sdk.statistic.object.UserShareHour;
  * @version 2017-09-30
  */
 public class GetUserShareHourRespone extends Response {
-	private static final long serialVersionUID = 2389478041182684749L;
-	
+
 	private List<UserShareHour> list;
 
 	public List<UserShareHour> getList() {

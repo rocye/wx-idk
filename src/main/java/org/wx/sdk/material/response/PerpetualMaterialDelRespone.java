@@ -8,5 +8,5 @@ import org.wx.sdk.base.Response;
  * @version 2016-05-30
  */
 public class PerpetualMaterialDelRespone extends Response {
-    private static final long serialVersionUID = -4075987836719686835L;
+
 }

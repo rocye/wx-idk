@@ -11,8 +11,7 @@ import org.wx.sdk.mutikf.object.KfObj;
  * @version 2016-08-02
  */
 public class KfAccountListRespone extends Response {
-    private static final long serialVersionUID = 1652292105261769833L;
-    
+
     /** 客服基本信息列表 */
     private List<KfObj> kf_list;
 

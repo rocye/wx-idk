@@ -8,8 +8,7 @@ import org.wx.sdk.base.Response;
  * @version 2016-04-12
  */
 public class PerpetualVideoGetRespone extends Response {
-    private static final long serialVersionUID = -7404165460936886596L;
-    
+
     /** 标题 */
     private String title;
     /** 描述 */

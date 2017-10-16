@@ -10,8 +10,7 @@ import org.wx.sdk.template.object.Template;
  * @version 2017-08-22
  */
 public class TemplateGetAllPrivateRespone extends Response {
-	private static final long serialVersionUID = 118505973846337799L;
-	
+
 	private List<Template> template_list;
 
 	public List<Template> getTemplate_list() {

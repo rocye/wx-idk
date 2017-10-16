@@ -14,6 +14,5 @@ import org.wx.sdk.base.Response;
  * @version 2017-02-14
  */
 public class TagsMemberBatchTagRespone extends Response {
-	private static final long serialVersionUID = -2348763195596014228L;
-    
+
 }

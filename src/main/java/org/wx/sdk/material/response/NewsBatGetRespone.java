@@ -10,8 +10,7 @@ import org.wx.sdk.material.object.NewsItem;
  * @version 2016-06-27
  */
 public class NewsBatGetRespone extends Response {
-    private static final long serialVersionUID = 8036558928328371711L;
-    
+
     /** 本次调用获取的素材的数量 */
     private Integer total_count;
     /** 本次调用获取的素材的数量 */

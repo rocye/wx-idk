@@ -10,8 +10,7 @@ import org.wx.sdk.statistic.object.UserRead;
  * @version 2017-09-29
  */
 public class GetUserReadRespone extends Response {
-	private static final long serialVersionUID = 4762750199557533664L;
-	
+
 	private List<UserRead> list;
 
 	public List<UserRead> getList() {

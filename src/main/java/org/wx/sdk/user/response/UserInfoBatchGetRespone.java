@@ -11,8 +11,7 @@ import org.wx.sdk.user.object.UserInfo;
  * @version 2016-10-27
  */
 public class UserInfoBatchGetRespone extends Response {
-    private static final long serialVersionUID = 3361752629075008055L;
-    
+
     /** 用户信息列表 */
     private List<UserInfo> user_info_list;
 

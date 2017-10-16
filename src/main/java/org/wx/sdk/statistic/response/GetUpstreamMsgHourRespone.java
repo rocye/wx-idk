@@ -10,8 +10,7 @@ import org.wx.sdk.statistic.object.UpstreamMsgHour;
  * @version 2017-10-09
  */
 public class GetUpstreamMsgHourRespone extends Response {
-	private static final long serialVersionUID = 6364563810163856323L;
-	
+
 	private List<UpstreamMsgHour> list;
 
 	public List<UpstreamMsgHour> getList() {

@@ -10,8 +10,7 @@ import org.wx.sdk.statistic.object.InterfaceSummaryHour;
  * @version 2017-10-09
  */
 public class GetInterfaceSummaryHourRespone extends Response {
-	private static final long serialVersionUID = 4582829287813562148L;
-	
+
 	private List<InterfaceSummaryHour> list;
 
 	public List<InterfaceSummaryHour> getList() {

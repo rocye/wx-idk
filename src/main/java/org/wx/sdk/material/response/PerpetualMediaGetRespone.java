@@ -8,8 +8,7 @@ import org.wx.sdk.base.Response;
  * @version 2016-04-12
  */
 public class PerpetualMediaGetRespone extends Response {
-    private static final long serialVersionUID = -4112441333383261304L;
-    
+
     /** 下载的文件名 */
     private String fileName;
 

@@ -11,8 +11,7 @@ import org.wx.sdk.material.object.ResNews;
  * @version 2016-04-12
  */
 public class NewsGetRespone extends Response {
-    private static final long serialVersionUID = -1756317348916109472L;
-    
+
     /** 图文列表 */
     private List<ResNews> news_item;
 

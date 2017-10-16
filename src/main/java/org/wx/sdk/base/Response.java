@@ -10,8 +10,7 @@ import com.alibaba.fastjson.TypeReference;
  * @author Rocye
  * @version 2016-03-24
  */
-public abstract class Response implements Serializable{
-    private static final long serialVersionUID = 8514578110856111145L;
+public abstract class Response {
 
     /** 接口原始返回字串 */
 	private String body;

@@ -13,8 +13,7 @@ import org.wx.sdk.base.Response;
  * @version 2017-02-14
  */
 public class TagsGetidListRespone extends Response {
-	private static final long serialVersionUID = -238078849825296219L;
-	
+
 	/** 标签ID列表 */
 	private List<Integer> tagid_list;
 

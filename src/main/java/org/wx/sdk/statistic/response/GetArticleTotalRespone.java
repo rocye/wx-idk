@@ -10,8 +10,7 @@ import org.wx.sdk.statistic.object.ArticleTotal;
  * @version 2017-09-29
  */
 public class GetArticleTotalRespone extends Response {
-	private static final long serialVersionUID = -789410012914879208L;
-	
+
 	private List<ArticleTotal> list;
 
 	public List<ArticleTotal> getList() {

@@ -10,8 +10,7 @@ import org.wx.sdk.user.object.Tag;
  * @version 2017-02-14
  */
 public class TagsGetRespone extends Response {
-	private static final long serialVersionUID = 916177875771547835L;
-	
+
 	/** 标签对象列表 */
 	private List<Tag> tags;
 

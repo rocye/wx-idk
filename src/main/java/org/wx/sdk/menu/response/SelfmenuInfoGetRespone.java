@@ -12,8 +12,7 @@ import org.wx.sdk.menu.object.EditSelfmenu;
  * @version 2016-09-03
  */
 public class SelfmenuInfoGetRespone extends Response {
-    private static final long serialVersionUID = -6949050006471928136L;
-    
+
     /** 菜单是否开启，0代表未开启，1代表开启 */
     private Short is_menu_open;
     /** 菜单信息 */

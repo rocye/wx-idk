@@ -8,8 +8,7 @@ import org.wx.sdk.base.Response;
  * @version 2016-04-12
  */
 public class PerpetualMaterialAddRespone extends Response {
-    private static final long serialVersionUID = -5168568327221943760L;
-    
+
     /** 新增的永久素材的media_id */
     private String media_id;
     /** 新增的图片素材的图片URL（仅新增图片素材时会返回该字段） */

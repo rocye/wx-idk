@@ -8,5 +8,5 @@ import org.wx.sdk.base.Response;
  * @version 2017.10.10
  */
 public class CommentRespone extends Response {
-	private static final long serialVersionUID = 4907911187204398214L;
+	
 }

@@ -8,6 +8,5 @@ import org.wx.sdk.base.Response;
  * @version 2016-09-29
  */
 public class MassSendDeleteRespone extends Response {
-    private static final long serialVersionUID = -2714778828116244182L;
-    
+
 }

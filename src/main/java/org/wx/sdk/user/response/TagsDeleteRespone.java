@@ -11,6 +11,5 @@ import org.wx.sdk.base.Response;
  * @version 2017-02-14
  */
 public class TagsDeleteRespone extends Response {
-	private static final long serialVersionUID = -7609989721337375493L;
-    
+
 }

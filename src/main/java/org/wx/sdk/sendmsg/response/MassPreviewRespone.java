@@ -11,8 +11,7 @@ import org.wx.sdk.base.Response;
  * @version 2016-09-30
  */
 public class MassPreviewRespone extends Response {
-    private static final long serialVersionUID = 2853830471935350506L;
-    
+
     /** 消息发送任务的ID */
     private Long msg_id;
     
