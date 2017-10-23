@@ -5,23 +5,13 @@ import java.util.List;
 import org.junit.Test;
 import org.wx.sdk.WxClient;
 import org.wx.sdk.base.Const;
+import org.wx.sdk.sendmsg.request.*;
+import org.wx.sdk.sendmsg.response.*;
 import org.wx.sdk.token.RedisAccessToken;
 import org.wx.sdk.material.request.TempMaterialAddRequest;
 import org.wx.sdk.material.request.TempVideoAddRequest;
 import org.wx.sdk.material.response.TempMaterialAddRespone;
 import org.wx.sdk.material.response.TempVideoAddRespone;
-import org.wx.sdk.sendmsg.request.MassSendDeleteRequest;
-import org.wx.sdk.sendmsg.request.MassSendGetRequest;
-import org.wx.sdk.sendmsg.request.MassSendGroupMpnewsRequest;
-import org.wx.sdk.sendmsg.request.MassSendGroupMpvideoRequest;
-import org.wx.sdk.sendmsg.request.MassSendOpenidImageRequest;
-import org.wx.sdk.sendmsg.request.MassSendOpenidMpnewsRequest;
-import org.wx.sdk.sendmsg.request.MassSendOpenidMpvideoRequest;
-import org.wx.sdk.sendmsg.request.MassSendOpenidTextRequest;
-import org.wx.sdk.sendmsg.request.MassSendOpenidVoiceRequest;
-import org.wx.sdk.sendmsg.response.MassSendDeleteRespone;
-import org.wx.sdk.sendmsg.response.MassSendGetRespone;
-import org.wx.sdk.sendmsg.response.MassSendRespone;
 
 public class MassSendReqTest {
 
@@ -32,8 +22,8 @@ public class MassSendReqTest {
     public void testSendMpnewsGroupReq() {
         String mediaId = "HRWLgHPlUO9YReBbhWMfOLyRpGPGBOxfaRmUYGb3l7rDNlw6J6x2GAs_OxM8kRsH";
         WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
-        MassSendGroupMpnewsRequest massSendGroupMpnewsReq = new MassSendGroupMpnewsRequest(true, mediaId);
-        MassSendRespone massSendRes = wxClient.excute(massSendGroupMpnewsReq);
+        MassSendTagMpnewsRequest massSendTagMpnewsReq = new MassSendTagMpnewsRequest(true, mediaId);
+        MassSendRespone massSendRes = wxClient.excute(massSendTagMpnewsReq);
         System.out.println(massSendRes.getBody());
         //{"errcode":48003,"errmsg":"user not agree mass-send protocol hint: [VeWTtb0059ge14]"}
     }
@@ -59,8 +49,8 @@ public class MassSendReqTest {
         //{"type":"video","media_id":"LkACLiX0B54bHgEBuOLoDFcD_SVeGbcZyGiGOgOblERyE7AYEz19wSsKtySG9S0-","created_at":1474623202}
         
         //群发视频
-        MassSendGroupMpvideoRequest massSendGroupVideoReq = new MassSendGroupMpvideoRequest(true, tempVideoAddRes.getMedia_id());
-        MassSendRespone massSendRes = wxClient.excute(massSendGroupVideoReq);
+        MassSendTagMpvideoRequest massSendTagVideoReq = new MassSendTagMpvideoRequest(true, tempVideoAddRes.getMedia_id());
+        MassSendRespone massSendRes = wxClient.excute(massSendTagVideoReq);
         System.out.println(massSendRes.getBody());
         //{"errcode":48003,"errmsg":"user not agree mass-send protocol hint: [d7HmwA0202age6]"}
     }
@@ -189,5 +179,27 @@ public class MassSendReqTest {
         System.out.println(massSendGetRes.getBody());
         //{"msg_id":3147483655,"msg_status":"SEND_SUCCESS"}
     }
+
+	/**
+	 * 测试获取群发速度接口
+	 */
+	@Test
+	public void testSpeedGetReq() {
+		WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
+		MassSpeedGetRequest massSpeedGetReq = new MassSpeedGetRequest();
+		MassSpeedGetRespone massSpeedRes = wxClient.excute(massSpeedGetReq);
+		System.out.println(massSpeedRes.getBody());
+	}
+
+	/**
+	 * 测试设置群发速度接口
+	 */
+	@Test
+	public void testSpeedetReq() {
+		WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
+		MassSpeedSetRequest massSpeedSetReq = new MassSpeedSetRequest(2);
+		MassSpeedSetRespone massSpeedSetRes = wxClient.excute(massSpeedSetReq);
+		System.out.println(massSpeedSetRes.getBody());
+	}
     
 }

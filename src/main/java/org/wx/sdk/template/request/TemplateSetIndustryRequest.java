@@ -16,10 +16,11 @@ public class TemplateSetIndustryRequest implements Request<TemplateSetIndustryRe
     private String accessToken;
     /** 请求参数 */
     private Map<String, Object> wxHashMap = new HashMap<String, Object>();
-    
-    private String industry_id1;
+	/** 行业编号1 */
+	private String industry_id1;
+	/** 行业编号2 */
     private String industry_id2;
-    
+
 
     /**
      * 构造器

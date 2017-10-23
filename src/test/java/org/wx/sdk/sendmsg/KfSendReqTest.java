@@ -3,12 +3,8 @@ package org.wx.sdk.sendmsg;
 import org.junit.Test;
 import org.wx.sdk.WxClient;
 import org.wx.sdk.base.Const;
+import org.wx.sdk.sendmsg.request.*;
 import org.wx.sdk.token.RedisAccessToken;
-import org.wx.sdk.sendmsg.request.KfSendImageRequest;
-import org.wx.sdk.sendmsg.request.KfSendMpnewsRequest;
-import org.wx.sdk.sendmsg.request.KfSendTextRequest;
-import org.wx.sdk.sendmsg.request.KfSendVideoRequest;
-import org.wx.sdk.sendmsg.request.KfSendVoiceRequest;
 import org.wx.sdk.sendmsg.response.KfSendRespone;
 
 public class KfSendReqTest {
@@ -76,4 +72,16 @@ public class KfSendReqTest {
         KfSendRespone kfSendRes = wxClient.excute(kfSendMpnewsReq);
         System.out.println(kfSendRes.getBody());
     }
+
+    /**
+     * 测试客服输入状态
+     */
+    @Test
+    public void testTypingReq() {
+        WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
+        KfTypingRequest kfTypingReq = new KfTypingRequest(Const.OPENID, "Typing");
+        KfSendRespone kfSendRes = wxClient.excute(kfTypingReq);
+        System.out.println(kfSendRes.getBody());
+    }
+
 }

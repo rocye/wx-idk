@@ -7,16 +7,24 @@ import org.wx.sdk.sendmsg.object.FilterObj;
 import org.wx.sdk.sendmsg.response.MassSendRespone;
 
 /**
- * <p>高级群发接口请求对象,根据分组进行群发【订阅号与服务号认证后均可用】
- * <p>1、对于认证订阅号，群发接口每天可成功调用1次，此次群发可选择发送给全部用户或某个分组；
- * <p>2、对于认证服务号虽然开发者使用高级群发接口的每日调用限制为100次，但是用户每月只能接收4条，
- * <p>  无论在公众平台网站上，还是使用接口群发，用户每月只能接收4条群发消息，多于4条的群发将对该用户发送失败；
- * <p>3、具备微信支付权限的公众号，在使用群发接口上传、群发图文消息类型时，可使用a标签加入外链；
- * <p>4、开发者可以使用预览接口校对消息样式和排版，通过预览接口可发送编辑好的消息给指定用户校验效果。
+ * <p>高级群发接口请求对象,根据标签进行群发【订阅号与服务号认证后均可用】
+ * <p>1、对于认证订阅号，群发接口每天可成功调用1次，此次群发可选择发送给全部用户或某个标签；
+ * <p>2、对于认证服务号虽然开发者使用高级群发接口的每日调用限制为100次，但是用户每月只能接收4条，无论在公众平台网站上，还是使用接口群发，用户每月只能接收4条群发消息，多于4条的群发将对该用户发送失败；
+ * <p>3、开发者可以使用预览接口校对消息样式和排版，通过预览接口可发送编辑好的消息给指定用户校验效果；
+ * <p>4、群发过程中，微信后台会自动进行图文消息原创校验，请提前设置好相关参数(send_ignore等)；
+ * <p>5、开发者可以主动设置 clientmsgid 来避免重复推送。
+ * <p>6、群发接口每分钟限制请求60次，超过限制的请求会被拒绝。
+ * <p>7、图文消息正文中插入自己帐号和其他公众号已群发文章链接的能力。
+ *
+ * <p>群发图文消息的过程如下：
+ * <p>1、首先，预先将图文消息中需要用到的图片，使用上传图文消息内图片接口，上传成功并获得图片 URL；
+ * <p>2、上传图文消息素材，需要用到图片时，请使用上一步获取的图片 URL；
+ * <p>3、使用对用户标签的群发，或对 OpenID 列表的群发，将图文消息群发出去，群发时微信会进行原创校验，并返回群发操作结果；
+ * <p>4、在上述过程中，如果需要，还可以预览图文消息、查询群发状态，或删除已群发的消息等。
  * @author Rocye
- * @version 2016-09-21
+ * @version 2017.10.20
  */
-public class MassSendGroupRequest implements Request<MassSendRespone> {
+public class MassSendTagRequest implements Request<MassSendRespone> {
 	/** 调用接口凭证 */
     private String accessToken;
     /** 请求参数 */
@@ -31,7 +39,7 @@ public class MassSendGroupRequest implements Request<MassSendRespone> {
      * @param filter    接收者
      * @param msgtype   群发的消息类型，图文消息为mpnews，文本消息为text，语音为voice，音乐为music，图片为image，视频为video，卡券为wxcard
      */
-    public MassSendGroupRequest(FilterObj filter, String msgtype) {
+    public MassSendTagRequest(FilterObj filter, String msgtype) {
         this.filter = filter;
         this.msgtype = msgtype;
     }

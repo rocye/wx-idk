@@ -3,6 +3,8 @@ package org.wx.sdk.template.request;
 import java.util.HashMap;
 import java.util.Map;
 import org.wx.sdk.base.Request;
+import org.wx.sdk.template.object.DataObj;
+import org.wx.sdk.template.object.MiniProram;
 import org.wx.sdk.template.response.TemplateSendRespone;
 
 /**
@@ -15,11 +17,16 @@ public class TemplateSendRequest implements Request<TemplateSendRespone>{
     private String accessToken;
     /** 请求参数 */
     private Map<String, Object> wxHashMap = new HashMap<String, Object>();
-    
+
+    /** 接收者openid */
     private String touser;
+    /** 模板ID */
     private String template_id;
+    /** 模板跳转链接 */
     private String url;
+    /** 跳小程序所需数据，不需跳小程序可不用传该数据（否） */
     private MiniProram miniprogram;
+    /* 模板数据 */
     private Map<String, DataObj> data;
     
     /**
@@ -140,90 +147,6 @@ public class TemplateSendRequest implements Request<TemplateSendRespone>{
 	}
 	public void setData(Map<String, DataObj> data) {
 		this.data = data;
-	}
-
-
-	/**
-     * 小程序跳转对象
-     * @author Rocye
-     * @version 2017.08.22
-     */
-	public class MiniProram {
-		/** 所需跳转到的小程序appid（该小程序appid必须与发模板消息的公众号是绑定关联关系） */
-		private String appid;
-		/** 所需跳转到小程序的具体页面路径，支持带参数,（示例index?foo=bar） */
-		private String pagepath;
-		
-		/**
-		 * 构造器
-		 * @param appid		所需跳转到的小程序appid
-		 * @param pagepath	所需跳转到小程序的具体页面路径，支持带参数
-		 */
-		public MiniProram(String appid, String pagepath) {
-			this.appid = appid;
-			this.pagepath = pagepath;
-		}
-		
-		public String getAppid() {
-			return appid;
-		}
-		public void setAppid(String appid) {
-			this.appid = appid;
-		}
-		
-		public String getPagepath() {
-			return pagepath;
-		}
-		public void setPagepath(String pagepath) {
-			this.pagepath = pagepath;
-		}
-		
-	}
-	
-	
-	/**
-     * 模板数据对象
-     * @author Rocye
-     * @version 2017.08.22
-     */
-	public static class DataObj {
-		/** 模板内容  */
-		private String value;
-		/** 模板内容字体颜色，不填默认为黑色(否) */
-		private String color;
-		
-		/**
-		 * 构造器
-		 * @param value	  模板内容
-		 */
-		public DataObj(String value) {
-			this.value = value;
-		}
-		
-		/**
-		 * 构造器
-		 * @param value	  模板内容
-		 * @param color	  模板内容字体颜色
-		 */
-		public DataObj(String value, String color) {
-			this.value = value;
-			this.color = color;
-		}
-		
-		public String getValue() {
-			return value;
-		}
-		public void setValue(String value) {
-			this.value = value;
-		}
-		
-		public String getColor() {
-			return color;
-		}
-		public void setColor(String color) {
-			this.color = color;
-		}
-		
 	}
 
 }

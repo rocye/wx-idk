@@ -4,8 +4,8 @@ import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 import org.wx.sdk.WxClient;
 import org.wx.sdk.base.Const;
+import org.wx.sdk.template.object.DataObj;
 import org.wx.sdk.template.request.*;
-import org.wx.sdk.template.request.TemplateSendRequest.DataObj;
 import org.wx.sdk.template.response.*;
 import org.wx.sdk.token.RedisAccessToken;
 import java.util.HashMap;
@@ -93,5 +93,17 @@ public class TemplateMsgReqTest {
         System.out.println(templateSendRes.getBody());
         //{"errcode":0,"errmsg":"ok","msgid":434251333}
     }
+
+	/**
+	 * 测试通过API推送订阅模板消息给到授权微信用户
+	 */
+	@Test
+	public void testTemplateSubscribeReq() {
+		WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
+		TemplateSubscribeRequest templateSubscribeReq = new TemplateSubscribeRequest(Const.OPENID, "BCURGG_sueiOD_n-OYU83iBUzn6yVdEbZyNeQwMyTtE", "http://www.baidu.com", "场景值", "标题", new DataObj("恭喜订阅成功..."));
+		TemplateSubscribeRespone templateSubscribeRes = wxClient.excute(templateSubscribeReq);
+		System.out.println(templateSubscribeRes.getBody());
+		//{"errcode":0,"errmsg":"ok"}
+	}
     
 }
