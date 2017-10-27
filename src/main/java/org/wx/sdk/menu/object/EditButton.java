@@ -8,9 +8,7 @@ import com.alibaba.fastjson.JSON;
  * @author Rocye
  * @version 2016-09-03
  */
-public class EditButton implements Serializable {
-    private static final long serialVersionUID = 5705923096171253378L;
-    
+public class EditButton {
     /** (编辑或开发)菜单的类型，公众平台官网上能够设置的菜单类型有view（跳转网页）、text（返回文本，下同）、img、photo、video、voice。使用API设置的则有8种，详见《自定义菜单创建接口》 */
     private String type;
     /** (编辑或开发)菜单名称 */

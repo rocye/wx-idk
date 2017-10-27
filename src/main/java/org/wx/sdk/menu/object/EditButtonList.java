@@ -9,9 +9,7 @@ import com.alibaba.fastjson.JSON;
  * @author Rocye
  * @version 2016-09-03
  */
-public class EditButtonList implements Serializable {
-    private static final long serialVersionUID = -7859140605720854935L;
-    
+public class EditButtonList {
     /** 菜单列表 */
     protected List<EditButton> list;
 

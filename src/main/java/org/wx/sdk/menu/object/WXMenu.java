@@ -10,9 +10,7 @@ import com.alibaba.fastjson.JSON;
  * @author Rocye
  * @version 2016-08-16
  */
-public class WXMenu implements Serializable {
-    private static final long serialVersionUID = -3671040261996819174L;
-    
+public class WXMenu {
     /** 菜单列表 */
 	protected List<WXButton> button;
 	/** 菜单ID */

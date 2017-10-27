@@ -9,9 +9,7 @@ import com.alibaba.fastjson.JSON;
  * @author Rocye
  * @version 2016-08-16
  */
-public class WXMatchrule implements Serializable {
-    private static final long serialVersionUID = 8291440532265237372L;
-    
+public class WXMatchrule {
     /** 用户分组id，可通过用户分组管理接口获取 */
     private Integer group_id;
     /** 性别：男（1）女（2），不填则不做匹配 */

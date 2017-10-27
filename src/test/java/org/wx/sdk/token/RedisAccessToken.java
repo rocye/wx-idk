@@ -55,7 +55,9 @@ public class RedisAccessToken extends WxToken {
             logger.error("从Redis中取AccessToken时：" + e.toString());
             return null;
         }finally{
-            jedis.close();
+			if(jedis != null){
+				jedis.close();
+			}
         }
     }
 
@@ -73,7 +75,9 @@ public class RedisAccessToken extends WxToken {
             e.printStackTrace();
             logger.error("往Redis中写AccessToken串时：" + e.toString());
         }finally{
-            jedis.close();
+        	if(jedis != null){
+				jedis.close();
+			}
         }
     }
 

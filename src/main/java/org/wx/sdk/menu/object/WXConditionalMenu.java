@@ -10,8 +10,6 @@ import com.alibaba.fastjson.JSON;
  * @version 2016-08-16
  */
 public class WXConditionalMenu extends WXMenu {
-    private static final long serialVersionUID = -2893761449335950272L;
-    
     /** 菜单匹配规则 */
     private WXMatchrule matchrule;
     

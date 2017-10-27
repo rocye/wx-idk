@@ -8,9 +8,7 @@ import com.alibaba.fastjson.JSON;
  * @author Rocye
  * @version 2016-09-03
  */
-public class EditNews implements Serializable{
-    private static final long serialVersionUID = -8154206631383481126L;
-    
+public class EditNews {
     /** 标题 */
     private String title;
     /** 作者 */

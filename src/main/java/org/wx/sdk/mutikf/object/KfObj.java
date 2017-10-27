@@ -1,15 +1,11 @@
 package org.wx.sdk.mutikf.object;
 
-import java.io.Serializable;
-
 /**
  * 客服基本信息
  * @author Rocye
  * @version 2016-08-02
  */
-public class KfObj implements Serializable{
-    private static final long serialVersionUID = -5607979337684854815L;
-    
+public class KfObj {
     /** 完整客服账号，格式为：账号前缀@公众号微信号 */
     private String kf_account;
 	/** 客服昵称 */

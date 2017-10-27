@@ -15,9 +15,7 @@ import com.alibaba.fastjson.JSON;
  * @author Rocye
  * @version 2016-08-16
  */
-public class WXButton implements Serializable {
-    private static final long serialVersionUID = -8501936030865916916L;
-    
+public class WXButton {
     /** (不能为空)菜单的响应动作类型 */
 	private String type;
 	/** (不能为空)菜单标题，不超过16个字节，子菜单不超过40个字节 */

@@ -8,9 +8,7 @@ import java.util.List;
  * @author Rocye
  * @version 2016-06-27
  */
-public class NewsContent implements Serializable{
-    private static final long serialVersionUID = 5842918193497394174L;
-    
+public class NewsContent {
     /** 图文素材的文章列表 */
     private List<ResNews> news_item;
     /** 图文素材创建时间 */

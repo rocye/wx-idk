@@ -7,8 +7,7 @@ import java.io.Serializable;
  * @author Rocye
  * @version 2017.10.10
  */
-public class News implements Serializable{
-    private static final long serialVersionUID = 1014952024084110195L;
+public class News {
     /** 标题 */
     private String title;
     /** 图文消息的封面图片素材id（必须是永久mediaID） */

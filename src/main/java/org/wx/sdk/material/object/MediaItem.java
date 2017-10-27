@@ -7,9 +7,7 @@ import java.io.Serializable;
  * @author Rocye
  * @version 2016-06-27
  */
-public class MediaItem implements Serializable{
-    private static final long serialVersionUID = -1677983594002594213L;
-    
+public class MediaItem {
     /** 素材ID */
     private String media_id;
     /** 素材名称 */

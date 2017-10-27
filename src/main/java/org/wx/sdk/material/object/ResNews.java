@@ -6,8 +6,6 @@ package org.wx.sdk.material.object;
  * @version 2016-04-12
  */
 public class ResNews extends News{
-    private static final long serialVersionUID = 2688904353991089162L;
-    
     /** 图文消息的封面图片的地址，第三方开发者也可以使用这个URL下载图片到自己服务器中，然后显示在自己网站上 */
     private String thumb_url;
     /** 图文页的URL */

@@ -1,15 +1,11 @@
 package org.wx.sdk.mutikf.object;
 
-import java.io.Serializable;
-
 /**
  * 在线客服接待信息
  * @author Rocye
  * @version 2016-08-09
  */
-public class KfOnline implements Serializable{
-    private static final long serialVersionUID = 7259394406144746841L;
-    
+public class KfOnline {
     /** 完整客服账号，格式为：账号前缀@公众号微信号 */
     private String kf_account;
     /** 客服在线状态 1：pc在线，2：手机在线。若pc和手机同时在线则为 1+2=3 */

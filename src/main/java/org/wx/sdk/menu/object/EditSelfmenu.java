@@ -9,9 +9,7 @@ import com.alibaba.fastjson.JSON;
  * @author Rocye
  * @version 2016-09-03
  */
-public class EditSelfmenu implements Serializable {
-    private static final long serialVersionUID = -3338565113333841631L;
-    
+public class EditSelfmenu {
     /** 菜单列表 */
     protected List<EditButton> button;
 

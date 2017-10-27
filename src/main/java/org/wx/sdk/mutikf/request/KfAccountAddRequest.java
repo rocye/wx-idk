@@ -22,6 +22,16 @@ public class KfAccountAddRequest implements Request<KfAccountRespone> {
     private String nickname;
     /** 客服账号登录密码，格式为密码明文的32位加密MD5值。该密码仅用于在公众平台官网的多客服功能中使用，若不使用多客服功能，则不必设置密码 */
     private String password;
+
+	/**
+	 * 构造器
+	 * @param kfAccount 完整客服账号，格式为：账号前缀@公众号微信号
+	 * @param nickname	客服昵称，最长6个汉字或12个英文字符
+	 */
+	public KfAccountAddRequest(String kfAccount, String nickname) {
+		this.kf_account = kfAccount;
+		this.nickname = nickname;
+	}
     
     /**
      * 构造器
@@ -56,7 +66,9 @@ public class KfAccountAddRequest implements Request<KfAccountRespone> {
     public Map<String, Object> getWxHashMap(){
         wxHashMap.put("kf_account", this.kf_account);
         wxHashMap.put("nickname", this.nickname);
-        wxHashMap.put("password", this.password);
+        if(this.password != null){
+			wxHashMap.put("password", this.password);
+		}
         return wxHashMap;
     }
     

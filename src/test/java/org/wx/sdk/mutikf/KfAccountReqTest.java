@@ -3,13 +3,9 @@ package org.wx.sdk.mutikf;
 import org.junit.Test;
 import org.wx.sdk.WxClient;
 import org.wx.sdk.base.Const;
+import org.wx.sdk.mutikf.request.*;
 import org.wx.sdk.token.RedisAccessToken;
 import org.wx.sdk.common.MD5;
-import org.wx.sdk.mutikf.request.KfAccountAddRequest;
-import org.wx.sdk.mutikf.request.KfAccountDelRequest;
-import org.wx.sdk.mutikf.request.KfAccountListRequest;
-import org.wx.sdk.mutikf.request.KfAccountOnlineListRequest;
-import org.wx.sdk.mutikf.request.KfAccountUpdateRequest;
 import org.wx.sdk.mutikf.response.KfAccountListRespone;
 import org.wx.sdk.mutikf.response.KfAccountOnlineListRespone;
 import org.wx.sdk.mutikf.response.KfAccountRespone;
@@ -74,5 +70,16 @@ public class KfAccountReqTest {
         KfAccountOnlineListRespone kfAccountOnlineListRes  = wxClient.excute(kfAccountOnlineListReq);
         System.out.println(kfAccountOnlineListRes.getBody());
     }
+
+	/**
+	 * 测试邀请绑定客服帐号
+	 */
+	@Test
+	public void testKfInviteworkerReq() {
+		WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
+		KfAccountInviteworkerRequest kfAccountInviteworkerReq = new KfAccountInviteworkerRequest("111", "222");
+		KfAccountRespone kfAccountRes  = wxClient.excute(kfAccountInviteworkerReq);
+		System.out.println(kfAccountRes.getBody());
+	}
     
 }

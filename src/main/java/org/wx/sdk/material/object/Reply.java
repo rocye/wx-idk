@@ -6,7 +6,6 @@ package org.wx.sdk.material.object;
  * @version 2017.10.10
  */
 public class Reply {
-	
 	/** 作者回复内容 */
 	private String content;
 	/** 作者回复时间 */

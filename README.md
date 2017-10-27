@@ -415,6 +415,26 @@ XXXRespone：响应实体主要用于接收请求返回<br>
 ### 06).获取在线客服基本信息
 #### 原接口地址：`https://api.weixin.qq.com/cgi-bin/customservice/getonlinekflist?access_token=ACCESS_TOKEN`
 #### 本工具包类：KfAccountOnlineListRequest & KfAccountOnlineListRespone
+### 07).邀请绑定客服帐号
+#### 原接口地址：`https://api.weixin.qq.com/customservice/kfaccount/inviteworker?access_token=ACCESS_TOKEN`
+#### 本工具包类：KfAccountInviteworkerRequest & KfAccountRespone
+----
+## 23.会话控制接口
+### 01).创建会话
+#### 原接口地址：`https://api.weixin.qq.com/customservice/kfsession/create?access_token=ACCESS_TOKEN`
+#### 本工具包类：KfsessionCreateRespone & KfsessionCreateRespone
+### 02).修改客服帐号
+#### 原接口地址：`https://api.weixin.qq.com/customservice/kfsession/close?access_token=ACCESS_TOKEN`
+#### 本工具包类：KfsessionCloseRequest & KfsessionCloseRespone
+### 03).获取客户会话状态
+#### 原接口地址：`https://api.weixin.qq.com/customservice/kfsession/getsession?access_token=ACCESS_TOKEN&openid=OPENID`
+#### 本工具包类：KfsessionGetRequest & KfsessionGetRespone
+### 04).获取客服会话列表
+#### 原接口地址：`https://api.weixin.qq.com/customservice/kfsession/getsessionlist?access_token=ACCESS_TOKEN&kf_account=KFACCOUNT`
+#### 本工具包类：KfsessionListRequest & KfsessionListRespone
+### 05).获取未接入会话列表
+#### 原接口地址：`https://api.weixin.qq.com/customservice/kfsession/getwaitcase?access_token=ACCESS_TOKEN`
+#### 本工具包类：KfsessionWaitcaseListRequest & KfsessionWaitcaseListRespone
 ----
 
 
