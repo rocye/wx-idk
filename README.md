@@ -435,6 +435,23 @@ XXXRespone：响应实体主要用于接收请求返回<br>
 ### 05).获取未接入会话列表
 #### 原接口地址：`https://api.weixin.qq.com/customservice/kfsession/getwaitcase?access_token=ACCESS_TOKEN`
 #### 本工具包类：KfsessionWaitcaseListRequest & KfsessionWaitcaseListRespone
+### 06).获取聊天记录
+#### 原接口地址：`https://api.weixin.qq.com/customservice/msgrecord/getmsglist?access_token=ACCESS_TOKEN`
+#### 本工具包类：KfMsgrecordListRequest & KfMsgrecordListRespone
+----
+## 24.Wi-Fi门店管理
+### 01).获取Wi-Fi门店列表
+#### 原接口地址：`https://api.weixin.qq.com/bizwifi/shop/list?access_token=ACCESS_TOKEN`
+#### 本工具包类：WifiShopListRequest & WifiShopListRespone
+### 02).查询门店Wi-Fi信息
+#### 原接口地址：`https://api.weixin.qq.com/bizwifi/shop/get?access_token=ACCESS_TOKEN`
+#### 本工具包类：WifiShopGetRequest & WifiShopGetRespone
+### 03).修改门店网络信息
+#### 原接口地址：`https://api.weixin.qq.com/bizwifi/shop/update?access_token=ACCESS_TOKEN`
+#### 本工具包类：WifiShopUpdateRequest & WifiShopUpdateRespone
+### 04).清空门店网络及设备
+#### 原接口地址：`https://api.weixin.qq.com/bizwifi/shop/clean?access_token=ACCESS_TOKEN`
+#### 本工具包类：WifiShopCleanRequest & WifiShopCleanRespone
 ----
 
 

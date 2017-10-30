@@ -64,4 +64,15 @@ public class KfSessionReqTest {
 		System.out.println(kfSessionWaitcaseListRes.getBody());
 	}
 
+	/**
+	 * 测试获取聊天记录
+	 */
+	@Test
+	public void testKfMsgrecordListReq() {
+		WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
+		KfMsgrecordListRequest kfMsgrecordListReq = new KfMsgrecordListRequest(987654321L, 987654321L, 1, 10000);
+		KfMsgrecordListRespone kfMsgrecordListRes  = wxClient.excute(kfMsgrecordListReq);
+		System.out.println(kfMsgrecordListRes.getBody());
+	}
+
 }
