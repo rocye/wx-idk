@@ -466,12 +466,29 @@ XXXRespone：响应实体主要用于接收请求返回<br>
 ### 04).删除设备
 #### 原接口地址：`https://api.weixin.qq.com/bizwifi/device/delete?access_token=ACCESS_TOKEN`
 #### 本工具包类：WifiDeviceDeleteRequest & WifiDeviceDeleteRespone
-### 05).获取物料二维码
+----
+## 26.获取物料二维码
 #### 原接口地址：`https://api.weixin.qq.com/bizwifi/qrcode/get?access_token=ACCESS_TOKEN`
 #### 本工具包类：WifiQrcodeGetRequest & WifiQrcodeGetRespone
 ----
-
-
+## 27.商家主页管理
+### 01).设置商家主页
+#### 原接口地址：`https://api.weixin.qq.com/bizwifi/homepage/set?access_token=ACCESS_TOKEN`
+#### 本工具包类：WifiHomepageSetRequest & WifiHomepageSetRespone
+### 02).查询商家主页
+#### 原接口地址：`https://api.weixin.qq.com/bizwifi/homepage/get?access_token=ACCESS_TOKEN`
+#### 本工具包类：WifiHomepageGetRequest & WifiHomepageGetRespone
+### 03).设置微信首页欢迎语
+#### 原接口地址：`https://api.weixin.qq.com/bizwifi/bar/set?access_token=ACCESS_TOKEN`
+#### 本工具包类：WifiBarSetRequest & WifiBarSetRespone
+### 04).设置连网完成页
+#### 原接口地址：`https://api.weixin.qq.com/bizwifi/finishpage/set?access_token=ACCESS_TOKEN`
+#### 本工具包类：WifiFinishpageSetRequest & WifiFinishpageSetRespone
+----
+## 28.Wi-Fi数据统计
+#### 原接口地址：`https://api.weixin.qq.com/bizwifi/statistics/list?access_token=ACCESS_TOKEN`
+#### 本工具包类：WifiStatisticsListRequest & WifiStatisticsListRespone
+----
 
 
 

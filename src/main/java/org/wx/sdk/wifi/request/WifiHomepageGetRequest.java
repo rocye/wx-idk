@@ -21,6 +21,12 @@ public class WifiHomepageGetRequest implements Request<WifiHomepageGetRespone> {
     /** 门店ID */
     private Integer shop_id;
 
+    /**
+     * 构造器
+     */
+    public WifiHomepageGetRequest() {
+    }
+
 	/**
 	 * 构造器
 	 * @param shopId	门店ID
