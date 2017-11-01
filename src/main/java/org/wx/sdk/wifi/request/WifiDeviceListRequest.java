@@ -1,22 +1,18 @@
 package org.wx.sdk.wifi.request;
 
 import org.wx.sdk.base.Request;
-import org.wx.sdk.poi.object.Business;
-import org.wx.sdk.poi.object.Poi;
-import org.wx.sdk.poi.response.AddPoiRespone;
-import org.wx.sdk.wifi.response.WifiShopListRespone;
-
+import org.wx.sdk.wifi.response.WifiDeviceListRespone;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * <p>获取Wi-Fi门店列表请求对象
- * <p>通过此接口获取WiFi的门店列表，该列表包括公众平台的门店信息、以及添加设备后的WiFi相关信息。
- * <p>注：微信连Wi-Fi下的所有接口中的shop_id，必需先通过此接口获取。
+ * <p>查询设备请求对象
+ * <p>可通过指定分页或具体门店ID的方式，查询当前MP账号下指定门店连网成功的设备信息。
+ * 一次最多能查询20个门店的设备信息。
  * @author Rocye
- * @version 2017.10.16
+ * @version 2017.11.01
  */
-public class WifiShopListRequest implements Request<WifiShopListRespone> {
+public class WifiDeviceListRequest implements Request<WifiDeviceListRespone> {
 
 	/** 微信公众平台唯一接口凭证 */
     private String accessToken;
@@ -27,11 +23,13 @@ public class WifiShopListRequest implements Request<WifiShopListRespone> {
     private Integer pageindex;
 	/** 每页的个数，默认10个，最大20个(否) */
     private Integer pagesize;
+	/** 根据门店id查询(否) */
+    private Integer shop_id;
 
     /**
      * 构造器
      */
-    public WifiShopListRequest() {
+    public WifiDeviceListRequest() {
     }
 
 	/**
@@ -39,24 +37,36 @@ public class WifiShopListRequest implements Request<WifiShopListRespone> {
 	 * @param pageindex		分页下标，默认从1开始(否)
 	 * @param pagesize		每页的个数，默认10个，最大20个(否)
 	 */
-	public WifiShopListRequest(Integer pageindex, Integer pagesize) {
+	public WifiDeviceListRequest(Integer pageindex, Integer pagesize) {
 		this.pageindex = pageindex;
 		this.pagesize = pagesize;
+	}
+
+	/**
+	 * 构造器
+	 * @param pageindex		分页下标，默认从1开始(否)
+	 * @param pagesize		每页的个数，默认10个，最大20个(否)
+	 * @param shopId		根据门店id查询(否)
+	 */
+	public WifiDeviceListRequest(Integer pageindex, Integer pagesize, Integer shopId) {
+		this.pageindex = pageindex;
+		this.pagesize = pagesize;
+		this.shop_id = shopId;
 	}
 
     /**
      * 获取接口请求地址
      */
     public String getApiUrl(){
-        String url = "https://api.weixin.qq.com/bizwifi/shop/list?access_token="+ this.accessToken;
+        String url = "https://api.weixin.qq.com/bizwifi/device/list?access_token="+ this.accessToken;
         return url;
     }
 
     /**
      * 获取返回对象类
      */
-    public Class<WifiShopListRespone> getResponseClass(){
-        return WifiShopListRespone.class;
+    public Class<WifiDeviceListRespone> getResponseClass(){
+        return WifiDeviceListRespone.class;
     }
     
     /**
@@ -67,8 +77,11 @@ public class WifiShopListRequest implements Request<WifiShopListRespone> {
         if(this.pageindex != null){
 			paraMap.put("pageindex", this.pageindex);
 		}
-		if(this.pagesize != null){
+        if(this.pagesize != null){
 			paraMap.put("pagesize", this.pagesize);
+		}
+        if(this.shop_id != null){
+			paraMap.put("shop_id", this.shop_id);
 		}
         return wxHashMap;
     }
@@ -113,6 +126,13 @@ public class WifiShopListRequest implements Request<WifiShopListRespone> {
 	}
 	public void setPagesize(Integer pagesize) {
 		this.pagesize = pagesize;
+	}
+
+	public Integer getShop_id() {
+		return shop_id;
+	}
+	public void setShop_id(Integer shop_id) {
+		this.shop_id = shop_id;
 	}
 
 }

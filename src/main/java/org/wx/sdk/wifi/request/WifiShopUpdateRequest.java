@@ -88,6 +88,9 @@ public class WifiShopUpdateRequest implements Request<WifiShopUpdateRespone> {
         paraMap.put("shop_id", this.shop_id);
         paraMap.put("old_ssid", this.old_ssid);
         paraMap.put("ssid", this.ssid);
+        if(this.password != null){
+			paraMap.put("password", this.password);
+		}
         return wxHashMap;
     }
     
@@ -138,6 +141,13 @@ public class WifiShopUpdateRequest implements Request<WifiShopUpdateRespone> {
 	}
 	public void setSsid(String ssid) {
 		this.ssid = ssid;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }
