@@ -30,12 +30,6 @@ public class WifiDeviceAddRequest implements Request<WifiDeviceAddRespone> {
 	 *  <p>不能包含中文字符；ssid和密码必须有一个以大写字母“WX”开头。*/
     private String password;
 
-    /**
-     * 构造器
-     */
-    public WifiDeviceAddRequest() {
-    }
-
 	/**
 	 * 构造器
 	 * @param shopId	门店ID
@@ -67,10 +61,9 @@ public class WifiDeviceAddRequest implements Request<WifiDeviceAddRespone> {
      * 获取请求参数的HashMap
      */
     public Map<String, Object> getWxHashMap(){
-        Map<String, Object> paraMap = new HashMap<String, Object>();
-        paraMap.put("shop_id", this.shop_id);
-        paraMap.put("ssid", this.ssid);
-        paraMap.put("password", this.password);
+		wxHashMap.put("shop_id", this.shop_id);
+		wxHashMap.put("ssid", this.ssid);
+		wxHashMap.put("password", this.password);
         return wxHashMap;
     }
     

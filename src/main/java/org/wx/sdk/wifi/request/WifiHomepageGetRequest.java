@@ -1,19 +1,17 @@
 package org.wx.sdk.wifi.request;
 
 import org.wx.sdk.base.Request;
-import org.wx.sdk.wifi.response.WifiShopGetRespone;
-import org.wx.sdk.wifi.response.WifiShopListRespone;
-
+import org.wx.sdk.wifi.response.WifiHomepageGetRespone;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * <p>查询门店Wi-Fi信息请求对象
- * <p>通过此接口查询某一门店的详细Wi-Fi信息，包括门店内的设备类型、ssid、密码、设备数量、商家主页URL、顶部常驻入口文案。
+ * <p>查询商家主页请求对象
+ * <p>通过门店ID查询商户主页的信息。
  * @author Rocye
- * @version 2017.10.30
+ * @version 2017.11.01
  */
-public class WifiShopGetRequest implements Request<WifiShopGetRespone> {
+public class WifiHomepageGetRequest implements Request<WifiHomepageGetRespone> {
 
 	/** 微信公众平台唯一接口凭证 */
     private String accessToken;
@@ -23,17 +21,11 @@ public class WifiShopGetRequest implements Request<WifiShopGetRespone> {
     /** 门店ID */
     private Integer shop_id;
 
-    /**
-     * 构造器
-     */
-    public WifiShopGetRequest() {
-    }
-
 	/**
 	 * 构造器
 	 * @param shopId	门店ID
 	 */
-	public WifiShopGetRequest(Integer shopId) {
+	public WifiHomepageGetRequest(Integer shopId) {
 		this.shop_id = shopId;
 	}
 
@@ -41,15 +33,15 @@ public class WifiShopGetRequest implements Request<WifiShopGetRespone> {
      * 获取接口请求地址
      */
     public String getApiUrl(){
-        String url = "https://api.weixin.qq.com/bizwifi/shop/get?access_token="+ this.accessToken;
+        String url = "https://api.weixin.qq.com/bizwifi/homepage/get?access_token="+ this.accessToken;
         return url;
     }
 
     /**
      * 获取返回对象类
      */
-    public Class<WifiShopGetRespone> getResponseClass(){
-        return WifiShopGetRespone.class;
+    public Class<WifiHomepageGetRespone> getResponseClass(){
+        return WifiHomepageGetRespone.class;
     }
     
     /**

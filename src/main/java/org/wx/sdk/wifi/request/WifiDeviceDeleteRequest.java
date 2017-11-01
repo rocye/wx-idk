@@ -22,12 +22,6 @@ public class WifiDeviceDeleteRequest implements Request<WifiDeviceDeleteRespone>
     /** 需要删除的无线网络设备无线mac地址，格式冒号分隔，字符长度17个，并且字母小写，例如：00:1f:7a:ad:5c:a8 */
     private String bssid;
 
-    /**
-     * 构造器
-     */
-    public WifiDeviceDeleteRequest() {
-    }
-
 	/**
 	 * 构造器
 	 * @param bssid		需要删除的无线网络设备无线mac地址，格式冒号分隔，字符长度17个，并且字母小写
@@ -55,8 +49,7 @@ public class WifiDeviceDeleteRequest implements Request<WifiDeviceDeleteRespone>
      * 获取请求参数的HashMap
      */
     public Map<String, Object> getWxHashMap(){
-        Map<String, Object> paraMap = new HashMap<String, Object>();
-		paraMap.put("bssid", this.bssid);
+		wxHashMap.put("bssid", this.bssid);
         return wxHashMap;
     }
     

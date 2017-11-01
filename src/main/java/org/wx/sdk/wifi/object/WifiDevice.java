@@ -7,7 +7,7 @@ package org.wx.sdk.wifi.object;
  */
 public class WifiDevice {
     /** 门店ID */
-    private String shop_id;
+    private Integer shop_id;
     /** 连网设备ssid */
     private String ssid;
     /** 门店内设备的设备类型，0-未添加设备，4-密码型设备，31-portal型设备 */
@@ -15,10 +15,10 @@ public class WifiDevice {
     /** 无线MAC地址 */
     private String bssid;
 
-	public String getShop_id() {
+	public Integer getShop_id() {
 		return shop_id;
 	}
-	public void setShop_id(String shop_id) {
+	public void setShop_id(Integer shop_id) {
 		this.shop_id = shop_id;
 	}
 

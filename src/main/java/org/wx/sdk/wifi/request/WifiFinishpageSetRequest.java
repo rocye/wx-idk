@@ -1,19 +1,18 @@
 package org.wx.sdk.wifi.request;
 
 import org.wx.sdk.base.Request;
-import org.wx.sdk.wifi.response.WifiShopGetRespone;
-import org.wx.sdk.wifi.response.WifiShopListRespone;
-
+import org.wx.sdk.wifi.response.WifiFinishpageSetRespone;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * <p>查询门店Wi-Fi信息请求对象
- * <p>通过此接口查询某一门店的详细Wi-Fi信息，包括门店内的设备类型、ssid、密码、设备数量、商家主页URL、顶部常驻入口文案。
+ * <p>设置连网完成页请求对象
+ * <p>当顾客使用微信连Wi-Fi方式连网成功时，点击页面右上角“完成”按钮，即可进入已设置的连网完成页。
+ * <p>注：此接口只对公众号第三方平台和认证公众号开放，非认证公众号无法调用接口设置连网成功页。
  * @author Rocye
- * @version 2017.10.30
+ * @version 2017.11.01
  */
-public class WifiShopGetRequest implements Request<WifiShopGetRespone> {
+public class WifiFinishpageSetRequest implements Request<WifiFinishpageSetRespone> {
 
 	/** 微信公众平台唯一接口凭证 */
     private String accessToken;
@@ -22,34 +21,32 @@ public class WifiShopGetRequest implements Request<WifiShopGetRespone> {
 
     /** 门店ID */
     private Integer shop_id;
-
-    /**
-     * 构造器
-     */
-    public WifiShopGetRequest() {
-    }
+	/** 连网完成页URL */
+    private String finishpage_url;
 
 	/**
 	 * 构造器
-	 * @param shopId	门店ID
+	 * @param shopId		门店ID
+	 * @param finishpageUrl	连网完成页URL
 	 */
-	public WifiShopGetRequest(Integer shopId) {
+	public WifiFinishpageSetRequest(Integer shopId, String finishpageUrl) {
 		this.shop_id = shopId;
+		this.finishpage_url = finishpageUrl;
 	}
 
     /**
      * 获取接口请求地址
      */
     public String getApiUrl(){
-        String url = "https://api.weixin.qq.com/bizwifi/shop/get?access_token="+ this.accessToken;
+        String url = "https://api.weixin.qq.com/bizwifi/finishpage/set?access_token="+ this.accessToken;
         return url;
     }
 
     /**
      * 获取返回对象类
      */
-    public Class<WifiShopGetRespone> getResponseClass(){
-        return WifiShopGetRespone.class;
+    public Class<WifiFinishpageSetRespone> getResponseClass(){
+        return WifiFinishpageSetRespone.class;
     }
     
     /**
@@ -57,6 +54,7 @@ public class WifiShopGetRequest implements Request<WifiShopGetRespone> {
      */
     public Map<String, Object> getWxHashMap(){
 		wxHashMap.put("shop_id", this.shop_id);
+		wxHashMap.put("finishpage_url", this.finishpage_url);
         return wxHashMap;
     }
     
@@ -93,6 +91,13 @@ public class WifiShopGetRequest implements Request<WifiShopGetRespone> {
 	}
 	public void setShop_id(Integer shop_id) {
 		this.shop_id = shop_id;
+	}
+
+	public String getFinishpage_url() {
+		return finishpage_url;
+	}
+	public void setFinishpage_url(String finishpage_url) {
+		this.finishpage_url = finishpage_url;
 	}
 
 }

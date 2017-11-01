@@ -1,19 +1,20 @@
 package org.wx.sdk.wifi.request;
 
 import org.wx.sdk.base.Request;
-import org.wx.sdk.wifi.response.WifiShopGetRespone;
-import org.wx.sdk.wifi.response.WifiShopListRespone;
+import org.wx.sdk.wifi.response.WifiBarSetRespone;
+import org.wx.sdk.wifi.response.WifiHomepageSetRespone;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * <p>查询门店Wi-Fi信息请求对象
- * <p>通过此接口查询某一门店的详细Wi-Fi信息，包括门店内的设备类型、ssid、密码、设备数量、商家主页URL、顶部常驻入口文案。
+ * <p>设置微信首页欢迎语请求对象
+ * <p>设置微信首页欢迎语，可选择“欢迎光临XXX”或“已连接XXXWiFi”，XXX为公众号名称或门店名称。
+ * <p>注：设置微信首页欢迎语的接口，未审核的门店不能设置包含门店名称（bar_type为1、3）的欢迎语内容。
  * @author Rocye
- * @version 2017.10.30
+ * @version 2017.11.01
  */
-public class WifiShopGetRequest implements Request<WifiShopGetRespone> {
+public class WifiBarSetRequest implements Request<WifiBarSetRespone> {
 
 	/** 微信公众平台唯一接口凭证 */
     private String accessToken;
@@ -22,34 +23,36 @@ public class WifiShopGetRequest implements Request<WifiShopGetRespone> {
 
     /** 门店ID */
     private Integer shop_id;
-
-    /**
-     * 构造器
-     */
-    public WifiShopGetRequest() {
-    }
+	/** 微信首页欢迎语的文本内容：
+	 *  0--欢迎光临+公众号名称；
+	 *  1--欢迎光临+门店名称；
+	 *  2--已连接+公众号名称+WiFi；
+	 *  3--已连接+门店名称+Wi-Fi。 */
+    private Short bar_type;
 
 	/**
 	 * 构造器
-	 * @param shopId	门店ID
+	 * @param shopId		门店ID
+	 * @param barType		微信首页欢迎语的文本内容
 	 */
-	public WifiShopGetRequest(Integer shopId) {
+	public WifiBarSetRequest(Integer shopId, Short barType) {
 		this.shop_id = shopId;
+		this.bar_type = barType;
 	}
 
     /**
      * 获取接口请求地址
      */
     public String getApiUrl(){
-        String url = "https://api.weixin.qq.com/bizwifi/shop/get?access_token="+ this.accessToken;
+        String url = "https://api.weixin.qq.com/bizwifi/bar/set?access_token="+ this.accessToken;
         return url;
     }
 
     /**
      * 获取返回对象类
      */
-    public Class<WifiShopGetRespone> getResponseClass(){
-        return WifiShopGetRespone.class;
+    public Class<WifiBarSetRespone> getResponseClass(){
+        return WifiBarSetRespone.class;
     }
     
     /**
@@ -57,6 +60,7 @@ public class WifiShopGetRequest implements Request<WifiShopGetRespone> {
      */
     public Map<String, Object> getWxHashMap(){
 		wxHashMap.put("shop_id", this.shop_id);
+		wxHashMap.put("bar_type", this.bar_type);
         return wxHashMap;
     }
     
@@ -93,6 +97,13 @@ public class WifiShopGetRequest implements Request<WifiShopGetRespone> {
 	}
 	public void setShop_id(Integer shop_id) {
 		this.shop_id = shop_id;
+	}
+
+	public Short getBar_type() {
+		return bar_type;
+	}
+	public void setBar_type(Short bar_type) {
+		this.bar_type = bar_type;
 	}
 
 }

@@ -453,6 +453,23 @@ XXXRespone：响应实体主要用于接收请求返回<br>
 #### 原接口地址：`https://api.weixin.qq.com/bizwifi/shop/clean?access_token=ACCESS_TOKEN`
 #### 本工具包类：WifiShopCleanRequest & WifiShopCleanRespone
 ----
+## 25.Wi-Fi设备管理
+### 01).添加密码型设备
+#### 原接口地址：`https://api.weixin.qq.com/bizwifi/device/add?access_token=ACCESS_TOKEN`
+#### 本工具包类：WifiDeviceAddRequest & WifiDeviceAddRespone
+### 02).添加portal型设备
+#### 原接口地址：`https://api.weixin.qq.com/bizwifi/apportal/register?access_token=ACCESS_TOKEN`
+#### 本工具包类：WifiApportalRegisterRequest & WifiApportalRegisterRespone
+### 03).查询设备
+#### 原接口地址：`https://api.weixin.qq.com/bizwifi/device/list?access_token=ACCESS_TOKEN`
+#### 本工具包类：WifiDeviceListRequest & WifiDeviceListRespone
+### 04).删除设备
+#### 原接口地址：`https://api.weixin.qq.com/bizwifi/device/delete?access_token=ACCESS_TOKEN`
+#### 本工具包类：WifiDeviceDeleteRequest & WifiDeviceDeleteRespone
+### 05).获取物料二维码
+#### 原接口地址：`https://api.weixin.qq.com/bizwifi/qrcode/get?access_token=ACCESS_TOKEN`
+#### 本工具包类：WifiQrcodeGetRequest & WifiQrcodeGetRespone
+----
 
 
 

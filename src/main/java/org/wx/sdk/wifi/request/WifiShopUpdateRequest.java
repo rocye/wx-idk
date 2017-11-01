@@ -33,12 +33,6 @@ public class WifiShopUpdateRequest implements Request<WifiShopUpdateRespone> {
 	 *  <p>不能包含中文字符；当门店下是密码型设备时，才可填写password，且ssid和密码必须有一个以大写字母“WX”开头。*/
     private String password;
 
-    /**
-     * 构造器
-     */
-    public WifiShopUpdateRequest() {
-    }
-
 	/**
 	 * 构造器
 	 * @param shopId	门店ID
@@ -84,12 +78,11 @@ public class WifiShopUpdateRequest implements Request<WifiShopUpdateRespone> {
      * 获取请求参数的HashMap
      */
     public Map<String, Object> getWxHashMap(){
-        Map<String, Object> paraMap = new HashMap<String, Object>();
-        paraMap.put("shop_id", this.shop_id);
-        paraMap.put("old_ssid", this.old_ssid);
-        paraMap.put("ssid", this.ssid);
+		wxHashMap.put("shop_id", this.shop_id);
+		wxHashMap.put("old_ssid", this.old_ssid);
+		wxHashMap.put("ssid", this.ssid);
         if(this.password != null){
-			paraMap.put("password", this.password);
+			wxHashMap.put("password", this.password);
 		}
         return wxHashMap;
     }

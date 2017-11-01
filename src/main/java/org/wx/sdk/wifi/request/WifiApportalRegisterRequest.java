@@ -30,12 +30,6 @@ public class WifiApportalRegisterRequest implements Request<WifiApportalRegister
     /** 重置secretkey，false-不重置，true-重置，默认为false*/
     private Boolean reset;
 
-    /**
-     * 构造器
-     */
-    public WifiApportalRegisterRequest() {
-    }
-
 	/**
 	 * 构造器
 	 * @param shopId	门店ID
@@ -77,11 +71,10 @@ public class WifiApportalRegisterRequest implements Request<WifiApportalRegister
      * 获取请求参数的HashMap
      */
     public Map<String, Object> getWxHashMap(){
-        Map<String, Object> paraMap = new HashMap<String, Object>();
-        paraMap.put("shop_id", this.shop_id);
-        paraMap.put("ssid", this.ssid);
+		wxHashMap.put("shop_id", this.shop_id);
+		wxHashMap.put("ssid", this.ssid);
         if(this.reset != null){
-			paraMap.put("reset", this.reset);
+			wxHashMap.put("reset", this.reset);
 		}
         return wxHashMap;
     }

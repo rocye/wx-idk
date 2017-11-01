@@ -63,12 +63,11 @@ public class WifiShopListRequest implements Request<WifiShopListRespone> {
      * 获取请求参数的HashMap
      */
     public Map<String, Object> getWxHashMap(){
-        Map<String, Object> paraMap = new HashMap<String, Object>();
         if(this.pageindex != null){
-			paraMap.put("pageindex", this.pageindex);
+			wxHashMap.put("pageindex", this.pageindex);
 		}
 		if(this.pagesize != null){
-			paraMap.put("pagesize", this.pagesize);
+			wxHashMap.put("pagesize", this.pagesize);
 		}
         return wxHashMap;
     }
