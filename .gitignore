@@ -2,3 +2,4 @@
 /.idea/
 .idea/
 wx-idk.iml
+/src/test/resources/apiclient_cert.p12

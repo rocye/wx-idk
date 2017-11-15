@@ -489,7 +489,18 @@ XXXRespone：响应实体主要用于接收请求返回<br>
 #### 原接口地址：`https://api.weixin.qq.com/bizwifi/statistics/list?access_token=ACCESS_TOKEN`
 #### 本工具包类：WifiStatisticsListRequest & WifiStatisticsListRespone
 ----
-
+----
+## 30.微信支付开发
+### 01).【现金红包】发放普通红包
+#### 原接口地址：`https://api.mch.weixin.qq.com/mmpaymkttransfers/sendredpack`
+#### 本工具包类：SendRedpackRequest & SendRedpackRespone
+### 02).【现金红包】发放裂变红包
+#### 原接口地址：`https://api.mch.weixin.qq.com/mmpaymkttransfers/sendgroupredpack`
+#### 本工具包类：SendGroupRedpackRequest & SendRedpackRespone
+### 03).【现金红包】查询红包记录
+#### 原接口地址：`https://api.mch.weixin.qq.com/mmpaymkttransfers/gethbinfo`
+#### 本工具包类：GetRedpackInfoRequest & GetRedpackInfoRespone
+----
 
 
 
