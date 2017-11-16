@@ -69,7 +69,6 @@ public class WxPayClient {
 				} else {
 					logger.warn("[" + request.getResponseClass() + "]参数格式不正确...");
 				}
-				System.out.println("请求：" + param);
 				if (param != null) {
 					requestRes = HttpsRequestTools.getInstance().sendPost(request.getApiUrl(), param, this.certPath, this.certPass);
 				} else {
@@ -88,7 +87,6 @@ public class WxPayClient {
 		}
 
 		String jsonRes = JSON.toJSONString(Dom4jUtil.getMapByXmlStr(requestRes));
-		System.out.println(jsonRes);
 		T response = JSON.parseObject(jsonRes, request.getResponseClass());
 		response.setBody(requestRes);
 		return response;

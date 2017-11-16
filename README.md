@@ -2,8 +2,43 @@
 微信接口开发包   by Rocye
 # 项目说明
 本项目是针对微信公众平台接口开发的工具包，旨在方便使用者更快更简单的进行微信公众平台的接口开发。
+# 安装
+## Maven
+添加仓库地址：
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+添加依赖：
+```xml
+<dependency>
+    <groupId>com.github.rocye</groupId>
+    <artifactId>wx-idk</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+## Gradle
+添加仓库地址：
+```
+allprojects {
+    repositories {
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+添加依赖：
+```
+dependencies {
+    compile 'com.github.rocye:wx-idk:1.0.0'
+}
+```
 # 使用说明
-项目编译生成的jar包可直接导入相关项目进行调用，具体代码可参照功能列表所对应的单元测试代码中找到。
+安装成功或直接下载jar包导入自己的项目后可进行调用，具体代码可参照功能列表所对应的单元测试代码中找到。
 # 功能列表
 ## 1.AccessToken缓存
 AccessToken是公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用access_token，开发者需要进行妥善保存。<br>
@@ -15,15 +50,26 @@ AccessToken是公众号的全局唯一接口调用凭据，公众号调用各接
 #### 3）ThirdpartyAccessToken
 通过第三方接口调用得到的AccessToken缓存在Redis中，主要针对公众平台后台不止一个开发商的情况。
 ## 2.接口调用示例
-调用逻辑由三部分组成：<br>
-WxClient：请求客户端通过Token做参数进行<br>
+#### 1)基础接口调用逻辑由三部分组成：<br>
+WxClient：请求客户端需要Token做参数<br>
 XXXRequest：请求实体主要用于传递请求参数<br>
 XXXRespone：响应实体主要用于接收请求返回<br>
-具体代码如下：
-	
-	WxClient wxClient = new WxClient(new RedisAccessToken(APPID, APPSERCT));
-	IpListGetRequest ipListGetReq = new IpListGetRequest();
-	IpListGetRespone ipListGetRes = wxClient.excute(ipListGetReq);
+示例代码如下：
+```
+WxClient wxClient = new WxClient(new RedisAccessToken(APPID, APPSERCT));
+IpListGetRequest ipListGetReq = new IpListGetRequest();
+IpListGetRespone ipListGetRes = wxClient.excute(ipListGetReq);
+```
+#### 2)支付接口调用逻辑由三部分组成：<br>
+WxPayClient：请求客户端需要商户API密钥、证书及密码做参数<br>
+XXXRequest：请求实体主要用于传递请求参数<br>
+XXXRespone：响应实体主要用于接收请求返回<br>
+示例代码如下：
+```
+WxPayClient wxPayClient  = new WxPayClient(Const.PaternerKey, Const.CertPath, Const.CertPass);
+GetQyTransferinfoRequest getQyTransferinfoReq = new GetQyTransferinfoRequest(nonceStr, AppId, MchId, partnerTradeNo);
+GetQyTransferinfoRespone getQyTransferinfoRes = wxPayClient.excute(getQyTransferinfoReq);
+```
 ----
 ## 3.获取微信服务器IP地址
 #### 原接口地址：`https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token=ACCESS_TOKEN`
@@ -489,7 +535,6 @@ XXXRespone：响应实体主要用于接收请求返回<br>
 #### 原接口地址：`https://api.weixin.qq.com/bizwifi/statistics/list?access_token=ACCESS_TOKEN`
 #### 本工具包类：WifiStatisticsListRequest & WifiStatisticsListRespone
 ----
-----
 ## 30.微信支付开发
 ### 01).【现金红包】发放普通红包
 #### 原接口地址：`https://api.mch.weixin.qq.com/mmpaymkttransfers/sendredpack`
@@ -500,6 +545,14 @@ XXXRespone：响应实体主要用于接收请求返回<br>
 ### 03).【现金红包】查询红包记录
 #### 原接口地址：`https://api.mch.weixin.qq.com/mmpaymkttransfers/gethbinfo`
 #### 本工具包类：GetRedpackInfoRequest & GetRedpackInfoRespone
+
+### 04).【企业付款】企业付款到零钱
+#### 原接口地址：`https://api.mch.weixin.qq.com/mmpaymkttransfers/promotion/transfers`
+#### 本工具包类：QyTransfersRequest & QyTransfersRespone
+
+### 05).【企业付款】查询企业付款到零钱
+#### 原接口地址：`https://api.mch.weixin.qq.com/mmpaymkttransfers/gettransferinfo`
+#### 本工具包类：GetQyTransferinfoRequest & GetQyTransferinfoRespone
 ----
 
 
