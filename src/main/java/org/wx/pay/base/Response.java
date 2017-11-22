@@ -34,7 +34,6 @@ public abstract class Response {
 	}
 	public void setBody(String body) {
 		this.body = body;
-		this.resultMap = Dom4jUtil.getMapByXmlStr(this.body);
 	}
 
 	public String getReturn_code() {

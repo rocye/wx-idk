@@ -121,6 +121,7 @@ public class SendGroupRedpackRequest extends SendRedpackRequest {
         return wxHashMap;
     }
 
+	///////////////////////////////////////Get&Set////////////////////////////////////
 	public String getAmt_type() {
 		return amt_type;
 	}

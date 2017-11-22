@@ -6,12 +6,10 @@ import org.apache.log4j.Logger;
 import org.wx.pay.base.HttpsRequestTools;
 import org.wx.pay.base.Request;
 import org.wx.pay.base.Response;
+import org.wx.pay.common.WxPayUtil;
 import org.wx.sdk.common.Dom4jUtil;
-import org.wx.sdk.common.MD5;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * 微信公众平台接口调用客户端
@@ -33,6 +31,15 @@ public class WxPayClient {
 	 * 微信证书密码
 	 */
 	private String certPass;
+
+	/**
+	 * 构建微信接口客户端
+	 * @param paternerKey 商户API密钥
+	 * @author Rocye
+	 */
+	public WxPayClient(String paternerKey) {
+		this.paternerKey = paternerKey;
+	}
 
 	/**
 	 * 构建微信接口客户端
@@ -59,19 +66,46 @@ public class WxPayClient {
 		String requestRes = null;
 		try {
 			if (request.getReqType() == 1) {
-				requestRes = HttpsRequestTools.getInstance().sendGet(request.getApiUrl(), this.certPath, this.certPass);
+				requestRes = HttpsRequestTools.getInstance().sendGet(request.getApiUrl(), request.getUseCert(), this.certPath, this.certPass);
 			} else if (request.getReqType() == 3) {
 				String param = null;
 				if (request.getParamFormat().equals("xml")) {
 					Map<String, Object> paraMap = request.getWxHashMap();
-					paraMap.put("sign", createSign(paraMap, this.paternerKey));
+					paraMap.put("sign", WxPayUtil.CreateSign(paraMap, this.paternerKey, paraMap.get("sign_type").toString()));
 					param = Dom4jUtil.getXmlStrByMap(paraMap);
 				} else {
 					logger.warn("[" + request.getResponseClass() + "]参数格式不正确...");
 				}
 				if (param != null) {
-					requestRes = HttpsRequestTools.getInstance().sendPost(request.getApiUrl(), param, this.certPath, this.certPass);
+					requestRes = HttpsRequestTools.getInstance().sendPost(request.getApiUrl(), request.getUseCert(), param, this.certPath, this.certPass);
 				} else {
+					requestRes = getReturnXml("FAIL", "参数不能为空.");
+				}
+			} else if(request.getReqType() == 4){
+				String param = null;
+				if(request.getParamFormat().equals("json")){
+					param = JSON.toJSONString(request.getWxHashMap());
+				}else if(request.getParamFormat().equals("xml")){
+					Map<String, Object> paraMap = new HashMap<String, Object>();
+					paraMap.putAll(request.getWxHashMap());
+					paraMap.remove("filePath");
+					paraMap.remove("fileName");
+					paraMap.put("sign", WxPayUtil.CreateSign(paraMap, this.paternerKey, paraMap.get("sign_type").toString()));
+					param = Dom4jUtil.getXmlStrByMap(paraMap);
+				}else{
+					logger.warn("["+ request.getResponseClass() +"]参数格式不正确...");
+				}
+
+				System.out.println(param);
+				if(param != null){
+					if(request.getWxHashMap().containsKey("filePath")){
+						String filePath = request.getWxHashMap().get("filePath").toString();
+						String fileName = request.getWxHashMap().get("fileName").toString();
+						requestRes = HttpsRequestTools.getInstance().downPost(request.getApiUrl(), param, filePath, fileName, request.getUseCert(), this.certPath, this.certPass);
+					}else{
+						requestRes = HttpsRequestTools.getInstance().sendPost(request.getApiUrl(), request.getUseCert(), param, this.certPath, this.certPass);
+					}
+				}else{
 					requestRes = getReturnXml("FAIL", "参数不能为空.");
 				}
 			}
@@ -86,57 +120,16 @@ public class WxPayClient {
 			requestRes = getReturnXml("FAIL", "请求接口时发生异常.");
 		}
 
-		String jsonRes = JSON.toJSONString(Dom4jUtil.getMapByXmlStr(requestRes));
+		String jsonRes = "{}";
+		Map<String, Object> resultMap = null;
+		if(request.getReqType() != 4){
+			resultMap = Dom4jUtil.getMapByXmlStr(requestRes);
+			jsonRes = JSON.toJSONString(resultMap);
+		}
 		T response = JSON.parseObject(jsonRes, request.getResponseClass());
 		response.setBody(requestRes);
+		response.setResultMap(resultMap);
 		return response;
-	}
-
-	/**
-	 * 组装签名的字段
-	 * @param params     参数
-	 * @param urlEncoder 是否urlEncoder
-	 * @return String
-	 */
-	private String packageSign(Map<String, Object> params, boolean urlEncoder) {
-		// 先将参数以其参数名的字典序升序进行排序
-		Map<String, Object> sortedParams = new TreeMap<String, Object>(params);
-		// 遍历排序后的字典，将所有参数按"key=value"格式拼接在一起
-		StringBuilder sb = new StringBuilder();
-		boolean first = true;
-		for (Map.Entry<String, Object> param : sortedParams.entrySet()) {
-			String value = param.getValue().toString();
-			if (StringUtils.isBlank(value)) {
-				continue;
-			}
-			if (first) {
-				first = false;
-			} else {
-				sb.append("&");
-			}
-			sb.append(param.getKey()).append("=");
-			if (urlEncoder) {
-				try {
-					value = URLEncoder.encode(value, "UTF-8").replace("+", "%20");
-				} catch (UnsupportedEncodingException e) {
-					logger.error(e.toString());
-				}
-			}
-			sb.append(value);
-		}
-		return sb.toString();
-	}
-
-	/**
-	 * 生成签名
-	 * @param params 参数
-	 * @param paternerKey 支付密钥
-	 * @return sign
-	 */
-	private String createSign(Map<String, Object> params, String paternerKey) {
-		String stringA = packageSign(params, false);
-		String stringSignTemp = stringA + "&key=" + paternerKey;
-		return MD5.encode(stringSignTemp).toUpperCase();
 	}
 
 	/**

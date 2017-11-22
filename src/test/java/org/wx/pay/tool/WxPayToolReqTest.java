@@ -3,6 +3,12 @@ package org.wx.pay.tool;
 import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 import org.wx.pay.WxPayClient;
+import org.wx.pay.mode.request.CloseOrderRequest;
+import org.wx.pay.mode.request.OrderQueryRequest;
+import org.wx.pay.mode.request.UnifiedOrderRequest;
+import org.wx.pay.mode.response.CloseOrderRespone;
+import org.wx.pay.mode.response.OrderQueryRespone;
+import org.wx.pay.mode.response.UnifiedOrderRespone;
 import org.wx.pay.tool.request.*;
 import org.wx.pay.tool.response.GetQyTransferinfoRespone;
 import org.wx.pay.tool.response.GetRedpackInfoRespone;
@@ -104,20 +110,5 @@ public class WxPayToolReqTest {
 		//<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[]]></return_msg><result_code><![CDATA[SUCCESS]]></result_code><partner_trade_no><![CDATA[TR201711151800538424]]></partner_trade_no><mch_id><![CDATA[1226672102]]></mch_id><detail_id><![CDATA[1000018301201711151373310958]]></detail_id><status><![CDATA[SUCCESS]]></status><reason><![CDATA[]]></reason><openid><![CDATA[or2iijlXsx-5NOMr6PyXz9BYPhV8]]></openid><transfer_name><![CDATA[]]></transfer_name><payment_amount><![CDATA[100]]></payment_amount><transfer_time><![CDATA[2017-11-15 18:00:51]]></transfer_time><payment_time><![CDATA[2017-11-15 18:00:51]]></payment_time><desc><![CDATA[测试企业付款接口]]></desc></xml>
 		System.out.println(getQyTransferinfoRes.getBody());
 	}
-
-	/**
-	 * 测试XML转对象
-	 */
-	@Test
-	public void testXml2MapReq() {
-		String xml = "<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg><result_code><![CDATA[SUCCESS]]></result_code><err_code><![CDATA[SUCCESS]]></err_code><err_code_des><![CDATA[OK]]></err_code_des><mch_billno><![CDATA[OD201711141535238930]]></mch_billno><mch_id><![CDATA[1226672102]]></mch_id><detail_id><![CDATA[1000041701201711143000109811129]]></detail_id><status><![CDATA[RECEIVED]]></status><send_type><![CDATA[API]]></send_type><hb_type><![CDATA[NORMAL]]></hb_type><total_num>1</total_num><total_amount>100</total_amount><send_time><![CDATA[2017-11-14 15:35:25]]></send_time><hblist><hbinfo><openid><![CDATA[or2iijlXsx-5NOMr6PyXz9BYPhV7]]></openid><amount>101</amount><rcv_time><![CDATA[2017-11-14 15:38:28]]></rcv_time></hbinfo></hblist></xml>";
-		Map<String,Object> map = Dom4jUtil.getMapByXmlStr(xml);
-		System.out.println(map);
-		String jsonRes = JSON.toJSONString(map);
-		System.out.println(jsonRes);
-
-		GetRedpackInfoRespone getRedpackInfoRes = JSON.parseObject(jsonRes, GetRedpackInfoRespone.class);
-	}
-
 
 }

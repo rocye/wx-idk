@@ -217,7 +217,16 @@ public class SendRedpackRequest implements Request<SendRedpackRespone> {
     public String getParamFormat(){
         return "xml";
     }
-    
+
+	/**
+	 * 获取请求是否需要证书
+	 * @return 是否证书请求
+	 */
+	public boolean getUseCert() {
+		return true;
+	}
+
+	///////////////////////////////////////Get&Set////////////////////////////////////
 	public String getNonce_str() {
 		return nonce_str;
 	}

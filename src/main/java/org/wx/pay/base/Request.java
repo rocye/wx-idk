@@ -38,5 +38,11 @@ public abstract interface Request<T extends Response> {
      * @return 请求参数的数据格式
      */
     public String getParamFormat();
+
+	/**
+	 * 获取请求是否需要证书
+	 * @return 是否证书请求
+	 */
+	public boolean getUseCert();
     
 }
