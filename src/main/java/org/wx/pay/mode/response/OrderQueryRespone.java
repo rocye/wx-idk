@@ -37,7 +37,7 @@ public class OrderQueryRespone extends Response {
 	private Integer cash_fee;
 	/** 现金支付币种，默认人民币：CNY (否) */
 	private String cash_fee_type;
-	/** 代金券金额：“代金券”金额<=订单金额，订单金额-“代金券”金额=现金支付金额 (否) */
+	/** 代金券金额：“代金券”金额&lt;=订单金额，订单金额-“代金券”金额=现金支付金额 (否) */
 	private Integer coupon_fee;
 	/** 代金券使用数量 (否) */
 	private Integer coupon_count;

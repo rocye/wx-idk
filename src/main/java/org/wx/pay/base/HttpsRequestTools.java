@@ -62,6 +62,7 @@ public class HttpsRequestTools {
      * @param method 请求方式：GET/POST
      * @param certPath 证书路径
      * @param certPass 证书密码
+	 * @param useCert 是否需要证书
      * @return Https连接
      * @throws Exception 任何异常
      * @version 2017.11.14

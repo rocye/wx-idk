@@ -5,12 +5,12 @@ import org.wx.sdk.webdev.response.OAuth2TokenGetRespone;
 import java.util.Map;
 
 /**
- * <p>第二步：通过code换取网页授权access_token 请求对象
  * <p>第一步：引导关注者打开如下页面，用户同意授权，获取code：
- * https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&redirect_uri=REDIRECT_URI&response_type=code&scope=SCOPE&state=STATE#wechat_redirect
+ * <p>第二步：通过code换取网页授权access_token 请求对象
  * @author Rocye
  * @version 2017.10.23
  */
+//https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&redirect_uri=REDIRECT_URI&response_type=code&scope=SCOPE&state=STATE#wechat_redirect
 public class OAuth2TokenGetRequest implements Request<OAuth2TokenGetRespone> {
 
 	/** 公众号的唯一标识 */

@@ -29,7 +29,7 @@ public class RefundQueryRequest implements Request<RefundQueryRespone> {
 	private String nonce_str;
 	/** 签名类型，默认为MD5，支持HMAC-SHA256和MD5 (否) */
 	private String sign_type = "MD5";
-	/** 微信订单号：查询的优先级是： refund_id > out_refund_no > transaction_id > out_trade_no */
+	/** 微信订单号：查询的优先级是： refund_id 大于 out_refund_no 大于 transaction_id 大于 out_trade_no */
 	private String transaction_id;
 	/** 商户订单号 */
 	private String out_trade_no;

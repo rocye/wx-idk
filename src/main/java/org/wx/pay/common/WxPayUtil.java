@@ -59,6 +59,8 @@ public class WxPayUtil {
 	 * @param params 参数
 	 * @param paternerKey 支付密钥
 	 * @return sign
+	 * @throws Exception
+	 * if an error occurred
 	 */
 	public static String CreateSign(Map<String, Object> params, String paternerKey) throws Exception {
 		return CreateSign(params, paternerKey, "MD5");
@@ -70,6 +72,8 @@ public class WxPayUtil {
 	 * @param paternerKey 支付密钥
 	 * @param signType 签名类型，默认为MD5，支持HMAC-SHA256和MD5
 	 * @return sign
+	 * @throws Exception
+	 * if an error occurred
 	 */
 	public static String CreateSign(Map<String, Object> params, String paternerKey, String signType) throws Exception {
 		String stringA = PackageSign(params, false);
@@ -89,6 +93,7 @@ public class WxPayUtil {
 	 * @param key 密钥
 	 * @return 加密结果
 	 * @throws Exception
+	 * if an error occurred
 	 */
 	public static String HMACSHA256(String data, String key) throws Exception {
 		Mac sha256_HMAC = Mac.getInstance("HmacSHA256");

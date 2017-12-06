@@ -22,11 +22,11 @@ public class OrderRefundRespone extends Response {
 	private String refund_id;
 	/** 退款总金额,单位为分,可以做部分退款 */
 	private Integer refund_fee;
-	/** 去掉非充值代金券退款金额后的退款金额，退款金额=申请退款金额-非充值代金券退款金额，退款金额<=申请退款金额 (否) */
+	/** 去掉非充值代金券退款金额后的退款金额，退款金额=申请退款金额-非充值代金券退款金额，退款金额&lt;=申请退款金额 (否) */
 	private Integer settlement_refund_fee;
 	/** 订单总金额，单位为分 */
 	private Integer total_fee;
-	/** 去掉非充值代金券金额后的订单总金额，应结订单金额=订单金额-非充值代金券金额，应结订单金额<=订单金额 (否) */
+	/** 去掉非充值代金券金额后的订单总金额，应结订单金额=订单金额-非充值代金券金额，应结订单金额&lt;=订单金额 (否) */
 	private Integer settlement_total_fee;
 	/** 标价币种，默认人民币：CNY (否) */
 	private String fee_type;
@@ -36,7 +36,7 @@ public class OrderRefundRespone extends Response {
 	private String cash_fee_type;
 	/** 现金退款金额，单位为分 (否) */
 	private Integer cash_refund_fee;
-	/** 代金券退款金额<=退款金额，退款金额-代金券或立减优惠退款金额为现金 (否) */
+	/** 代金券退款金额&lt;=退款金额，退款金额-代金券或立减优惠退款金额为现金 (否) */
 	private Integer coupon_refund_fee;
 	/** 退款代金券使用数量 (否) */
 	private Integer coupon_refund_count;
