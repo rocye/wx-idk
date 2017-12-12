@@ -59,10 +59,9 @@ public class ApiGetAuthorizerOptionRequest implements Request<ApiGetAuthorizerOp
      * 获取请求参数的HashMap
      */
     public Map<String, Object> getWxHashMap(){
-        Map<String, Object> paraMap = new HashMap<String, Object>();
-        paraMap.put("component_appid", this.component_appid);
-        paraMap.put("authorizer_appid", this.authorizer_appid);
-        paraMap.put("option_name", this.option_name);
+		wxHashMap.put("component_appid", this.component_appid);
+		wxHashMap.put("authorizer_appid", this.authorizer_appid);
+		wxHashMap.put("option_name", this.option_name);
         return wxHashMap;
     }
     

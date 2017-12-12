@@ -549,11 +549,32 @@ GetQyTransferinfoRespone getQyTransferinfoRes = wxPayClient.excute(getQyTransfer
 ### 04).【企业付款】企业付款到零钱
 #### 原接口地址：`https://api.mch.weixin.qq.com/mmpaymkttransfers/promotion/transfers`
 #### 本工具包类：QyTransfersRequest & QyTransfersRespone
-
 ### 05).【企业付款】查询企业付款到零钱
 #### 原接口地址：`https://api.mch.weixin.qq.com/mmpaymkttransfers/gettransferinfo`
 #### 本工具包类：GetQyTransferinfoRequest & GetQyTransferinfoRespone
 ----
-
+## 31.微信开放平台
+### 01).【第三方平台】获取第三方平台component_access_token
+#### 原接口地址：`https://api.weixin.qq.com/cgi-bin/component/api_component_token`
+#### 本工具包类：ApiComponentTokenRequest & ApiComponentTokenRespone
+### 02).【第三方平台】获取预授权码pre_auth_code
+#### 原接口地址：`https://api.weixin.qq.com/cgi-bin/component/api_create_preauthcode?component_access_token=ACCESS_TOKEN`
+#### 本工具包类：ApiCreatePreauthcodeRequest & ApiCreatePreauthcodeRespone
+### 03).【第三方平台】使用授权码换取公众号或小程序的接口调用凭据和授权信息
+#### 原接口地址：`https://api.weixin.qq.com/cgi-bin/component/api_query_auth?component_access_token=ACCESS_TOKEN`
+#### 本工具包类：ApiQueryAuthRequest & ApiQueryAuthRespone
+### 04).【第三方平台】获取（刷新）授权公众号或小程序的接口调用凭据（令牌）
+#### 原接口地址：`https:// api.weixin.qq.com /cgi-bin/component/api_authorizer_token?component_access_token=ACCESS_TOKEN`
+#### 本工具包类：ApiAuthorizerTokenRequest & ApiAuthorizerTokenRespone
+### 05).【第三方平台】获取授权方的帐号基本信息
+#### 原接口地址：`https://api.weixin.qq.com/cgi-bin/component/api_get_authorizer_info?component_access_token=ACCESS_TOKEN`
+#### 本工具包类：ApiGetAuthorizerInfoRequest & ApiGetAuthorizerInfoRespone
+### 06).【第三方平台】获取授权方的选项设置信息
+#### 原接口地址：`https://api.weixin.qq.com/cgi-bin/component/api_get_authorizer_option?component_access_token=ACCESS_TOKEN`
+#### 本工具包类：ApiGetAuthorizerOptionRequest & ApiGetAuthorizerOptionRespone
+### 07).【第三方平台】设置授权方的选项信息
+#### 原接口地址：`https://api.weixin.qq.com/cgi-bin/component/api_set_authorizer_option?component_access_token=ACCESS_TOKEN`
+#### 本工具包类：ApiSetAuthorizerOptionRequest & ApiSetAuthorizerOptionRespone
+----
 
 

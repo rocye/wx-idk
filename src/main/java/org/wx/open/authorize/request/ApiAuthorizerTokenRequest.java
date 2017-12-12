@@ -58,10 +58,9 @@ public class ApiAuthorizerTokenRequest implements Request<ApiAuthorizerTokenResp
      * 获取请求参数的HashMap
      */
     public Map<String, Object> getWxHashMap(){
-        Map<String, Object> paraMap = new HashMap<String, Object>();
-        paraMap.put("component_appid", this.component_appid);
-        paraMap.put("authorizer_appid", this.authorizer_appid);
-        paraMap.put("authorizer_refresh_token", this.authorizer_refresh_token);
+		wxHashMap.put("component_appid", this.component_appid);
+		wxHashMap.put("authorizer_appid", this.authorizer_appid);
+		wxHashMap.put("authorizer_refresh_token", this.authorizer_refresh_token);
         return wxHashMap;
     }
     

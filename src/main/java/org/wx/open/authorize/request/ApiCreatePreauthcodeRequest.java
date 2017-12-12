@@ -48,8 +48,7 @@ public class ApiCreatePreauthcodeRequest implements Request<ApiCreatePreauthcode
      * 获取请求参数的HashMap
      */
     public Map<String, Object> getWxHashMap(){
-        Map<String, Object> paraMap = new HashMap<String, Object>();
-        paraMap.put("component_appid", this.component_appid);
+		wxHashMap.put("component_appid", this.component_appid);
         return wxHashMap;
     }
     

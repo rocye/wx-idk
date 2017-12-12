@@ -1,6 +1,7 @@
 package org.wx.open.authorize.request;
 
 import org.wx.open.authorize.response.ApiCreatePreauthcodeRespone;
+import org.wx.open.authorize.response.ApiQueryAuthRespone;
 import org.wx.sdk.base.Request;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +14,7 @@ import java.util.Map;
  * @author Rocye
  * @version 2017.12.06
  */
-public class ApiQueryAuthRequest implements Request<ApiCreatePreauthcodeRespone> {
+public class ApiQueryAuthRequest implements Request<ApiQueryAuthRespone> {
 	/** 第三方平台access_token */
     private String accessToken;
 
@@ -46,17 +47,16 @@ public class ApiQueryAuthRequest implements Request<ApiCreatePreauthcodeRespone>
     /**
      * 获取返回对象类
      */
-    public Class<ApiCreatePreauthcodeRespone> getResponseClass(){
-        return ApiCreatePreauthcodeRespone.class;
+    public Class<ApiQueryAuthRespone> getResponseClass(){
+        return ApiQueryAuthRespone.class;
     }
     
     /**
      * 获取请求参数的HashMap
      */
     public Map<String, Object> getWxHashMap(){
-        Map<String, Object> paraMap = new HashMap<String, Object>();
-        paraMap.put("component_appid", this.component_appid);
-        paraMap.put("authorization_code", this.authorization_code);
+		wxHashMap.put("component_appid", this.component_appid);
+		wxHashMap.put("authorization_code", this.authorization_code);
         return wxHashMap;
     }
     
