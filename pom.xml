@@ -124,19 +124,6 @@
 				</executions>
 			</plugin>
             
-			<!-- 生成可执行JAR包命令 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>org/wx/caches/**</exclude>
-						<exclude>org/wx/sdk/base/token/**</exclude>
-						<exclude>org/wx/sdk/base/ticket/**</exclude>
-					</excludes>
-				</configuration>
-			</plugin> -->
-			
 			<!-- 配置资源文件 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
