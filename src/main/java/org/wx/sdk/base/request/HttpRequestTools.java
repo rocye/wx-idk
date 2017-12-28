@@ -288,17 +288,31 @@ public class HttpRequestTools {
         }
         return result;
     }
+
+	/**
+	 * 向指定 URL 发送上传POST方法的请求，上传多媒体文件
+	 * @author Rocye
+	 * @param url 发送请求的 URL
+	 * @param file 要上传的文件
+	 * @param useHttps 是否https请求
+	 * @return 远程资源的响应结果
+	 * @version 2016-03-31
+	 */
+	public String uploadPost(String url, File file, boolean useHttps) {
+		return uploadPost(url, "media", file, useHttps);
+	}
     
     /**
      * 向指定 URL 发送上传POST方法的请求，上传多媒体文件
      * @author Rocye
      * @param url 发送请求的 URL
      * @param file 要上传的文件
+     * @param name 上传文件名字
      * @param useHttps 是否https请求
      * @return 远程资源的响应结果
      * @version 2016-03-31
      */
-    public String uploadPost(String url, File file, boolean useHttps) {
+    public String uploadPost(String url, String name, File file, boolean useHttps) {
         OutputStream out = null;
         DataInputStream in = null;
         String result = null;
@@ -313,7 +327,7 @@ public class HttpRequestTools {
             sb.append("--"); // ////////必须多两道线
             sb.append(BOUNDARY);
             sb.append("\r\n");
-            sb.append("Content-Disposition: form-data;name=\"media\";filename=\"" + file.getName() + "\"\r\n");
+            sb.append("Content-Disposition: form-data;name=\""+ name +"\";filename=\"" + file.getName() + "\"\r\n");
             sb.append("Content-Type:application/octet-stream\r\n\r\n");
             byte[] head = sb.toString().getBytes("utf-8");
             // 获得输出流

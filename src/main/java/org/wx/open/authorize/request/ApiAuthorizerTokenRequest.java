@@ -43,7 +43,7 @@ public class ApiAuthorizerTokenRequest implements Request<ApiAuthorizerTokenResp
      * 获取接口请求地址
      */
     public String getApiUrl(){
-        String url = "https:// api.weixin.qq.com /cgi-bin/component/api_authorizer_token?component_access_token="+ this.accessToken;
+        String url = "https://api.weixin.qq.com/cgi-bin/component/api_authorizer_token?component_access_token="+ this.accessToken;
         return url;
     }
 

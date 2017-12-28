@@ -128,7 +128,12 @@ public class WxClient {
                 String filePath = request.getWxHashMap().get("filePath").toString();
                 String fileName = request.getWxHashMap().get("fileName").toString();
                 File file = new File(filePath + fileName);
-                requestRes = HttpRequestTools.getInstance().uploadPost(request.getApiUrl(), file, request.getUseHttps());
+                if(request.getWxHashMap().containsKey("name")){
+                	String name = request.getWxHashMap().get("name").toString();
+					requestRes = HttpRequestTools.getInstance().uploadPost(request.getApiUrl(), name, file, request.getUseHttps());
+				}else{
+					requestRes = HttpRequestTools.getInstance().uploadPost(request.getApiUrl(), file, request.getUseHttps());
+				}
             }else if(request.getReqType() == 6){
                 String filePath = request.getWxHashMap().get("filePath").toString();
                 String fileName = request.getWxHashMap().get("fileName").toString();
