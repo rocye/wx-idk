@@ -18,7 +18,7 @@
 <dependency>
     <groupId>com.github.rocye</groupId>
     <artifactId>wx-idk</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.1</version>
 </dependency>
 ```
 ## Gradle
@@ -34,7 +34,7 @@ allprojects {
 添加依赖：
 ```
 dependencies {
-    compile 'com.github.rocye:wx-idk:1.0.0'
+    compile 'com.github.rocye:wx-idk:1.1.1'
 }
 ```
 # 使用说明
@@ -564,7 +564,7 @@ GetQyTransferinfoRespone getQyTransferinfoRes = wxPayClient.excute(getQyTransfer
 #### 原接口地址：`https://api.weixin.qq.com/cgi-bin/component/api_query_auth?component_access_token=ACCESS_TOKEN`
 #### 本工具包类：ApiQueryAuthRequest & ApiQueryAuthRespone
 ### 04).【第三方平台】获取（刷新）授权公众号或小程序的接口调用凭据（令牌）
-#### 原接口地址：`https:// api.weixin.qq.com /cgi-bin/component/api_authorizer_token?component_access_token=ACCESS_TOKEN`
+#### 原接口地址：`https://api.weixin.qq.com/cgi-bin/component/api_authorizer_token?component_access_token=ACCESS_TOKEN`
 #### 本工具包类：ApiAuthorizerTokenRequest & ApiAuthorizerTokenRespone
 ### 05).【第三方平台】获取授权方的帐号基本信息
 #### 原接口地址：`https://api.weixin.qq.com/cgi-bin/component/api_get_authorizer_info?component_access_token=ACCESS_TOKEN`
@@ -575,6 +575,90 @@ GetQyTransferinfoRespone getQyTransferinfoRes = wxPayClient.excute(getQyTransfer
 ### 07).【第三方平台】设置授权方的选项信息
 #### 原接口地址：`https://api.weixin.qq.com/cgi-bin/component/api_set_authorizer_option?component_access_token=ACCESS_TOKEN`
 #### 本工具包类：ApiSetAuthorizerOptionRequest & ApiSetAuthorizerOptionRespone
+----
+## 32.微信卡券
+### 01).上传卡券图片素材
+#### 原接口地址：`https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardImgUploadRequest & CardImgUploadRespone
+### 02).创建卡券
+#### 原接口地址：`https://api.weixin.qq.com/card/create?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardCreateRequest & CardCreateRespone
+### 03).设置买单接口
+#### 原接口地址：`https://api.weixin.qq.com/card/paycell/set?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardPayCellSetRequest & CardPayCellSetRespone
+### 04).设置自助核销接口
+#### 原接口地址：`https://api.weixin.qq.com/card/selfconsumecell/set?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardSelfconsumeCellSetRequest & CardSelfconsumeCellSetRespone
+### 05).创建二维码接口
+#### 原接口地址：`https://api.weixin.qq.com/card/qrcode/create?access_token=ACCESS_TOKEN`
+#### 本工具包类：(CardQrcodeCreateRequest & CardMultiQrcodeCreateRequest) & CardQrcodeCreateRespone
+### 06).创建货架接口
+#### 原接口地址：`https://api.weixin.qq.com/card/landingpage/create?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardLandingPageCreateRequest & CardLandingPageCreateRespone
+### 07).导入code接口
+#### 原接口地址：`http://api.weixin.qq.com/card/code/deposit?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardCodeDepositRequest & CardCodeDepositRespone
+### 08).查询导入code数目接口
+#### 原接口地址：`http://api.weixin.qq.com/card/code/getdepositcount?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardCodeGetDepositCountRequest & CardCodeGetDepositCountRespone
+### 09).核查code接口
+#### 原接口地址：`http://api.weixin.qq.com/card/code/checkcode?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardCodeCheckRequest & CardCodeCheckRespone
+### 10).获取图文消息群发卡券代码
+#### 原接口地址：`https://api.weixin.qq.com/card/mpnews/gethtml?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardMpnewsGetHtmlRequest & CardMpnewsGetHtmlRespone
+### 11).设置测试白名单
+#### 原接口地址：`https://api.weixin.qq.com/card/testwhitelist/set?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardTestwhitelistSetRequest & CardTestwhitelistSetRespone
+----
+### 核销/管理卡券
+### 13).查询Code接口
+#### 原接口地址：`https://api.weixin.qq.com/card/code/get?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardCodeGetRequest & CardCodeGetRespone
+### 14).核销Code接口
+#### 原接口地址：`https://api.weixin.qq.com/card/code/consume?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardCodeConsumeRequest & CardCodeConsumeRespone
+### 15).Code解码接口
+#### 原接口地址：`https://api.weixin.qq.com/card/code/decrypt?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardCodeDecryptRequest & CardCodeDecryptRespone
+### 16).获取用户已领取卡券接口
+#### 原接口地址：`https://api.weixin.qq.com/card/user/getcardlist?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardUserGetCardListRequest & CardUserGetCardListRespone
+### 17).查看卡券详情
+#### 原接口地址：`https://api.weixin.qq.com/card/get?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardGetRequest & CardGetRespone
+### 18).批量查询卡券列表
+#### 原接口地址：`https://api.weixin.qq.com/card/batchget?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardBatchGetRequest & CardBatchGetRespone
+### 19).更改卡券信息接口
+#### 原接口地址：`https://api.weixin.qq.com/card/update?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardUpdateRequest & CardUpdateRespone
+### 20).修改库存接口
+#### 原接口地址：`https://api.weixin.qq.com/card/modifystock?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardModifyStockRequest & CardModifyStockRespone
+### 21).更改Code接口
+#### 原接口地址：`https://api.weixin.qq.com/card/code/update?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardCodeUpdateRequest & CardCodeUpdateRespone
+### 22).删除卡券接口
+#### 原接口地址：`https://api.weixin.qq.com/card/delete?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardDeleteRequest & CardDeleteRespone
+### 23).设置卡券失效接口
+#### 原接口地址：`https://api.weixin.qq.com/card/code/unavailable?access_token=ACCESS_TOKEN`
+#### 本工具包类：CardCodeUnavailableRequest & CardCodeUnavailableRespone
+----
+### 统计卡券数据
+### 24).拉取卡券概况数据接口
+#### 原接口地址：`https://api.weixin.qq.com/datacube/getcardbizuininfo?access_token=ACCESS_TOKEN`
+#### 本工具包类：GetCardBizuininfoRequest & GetCardBizuininfoRespone
+### 25).获取免费券数据接口
+#### 原接口地址：`https://api.weixin.qq.com/datacube/getcardcardinfo?access_token=ACCESS_TOKEN`
+#### 本工具包类：GetCardCardinfoRequest & GetCardCardinfoRespone
+### 26).拉取会员卡概况数据接口
+#### 原接口地址：`https://api.weixin.qq.com/datacube/getcardmembercardinfo?access_token=ACCESS_TOKEN`
+#### 本工具包类：GetCardMemberCardinfoRequest & GetCardMemberCardinfoRespone
+### 27).拉取单张会员卡数据接口
+#### 原接口地址：`https://api.weixin.qq.com/datacube/getcardmembercarddetail?access_token=ACCESS_TOKEN`
+#### 本工具包类：GetCardMemberCarddetailRequest & GetCardMemberCarddetailRespone
 ----
 
 

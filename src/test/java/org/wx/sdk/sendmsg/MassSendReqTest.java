@@ -201,5 +201,19 @@ public class MassSendReqTest {
 		MassSpeedSetRespone massSpeedSetRes = wxClient.excute(massSpeedSetReq);
 		System.out.println(massSpeedSetRes.getBody());
 	}
+
+	/**
+	 * 测试按Openid群发卡券消息
+	 */
+	@Test
+	public void testSendOpenidReq() {
+		List<String> openidList = new ArrayList<String>(0);
+		openidList.add("oFYHLviCatnBPDs1XxcXoOePNows");
+		openidList.add("oFYHLvkzNC8P_uZKPS7ppSuHiYwk");
+		WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
+		MassSendOpenidWxcardRequest massSendOpenidWxcardReq = new MassSendOpenidWxcardRequest(openidList, "pFYHLvlpbLoaHpnguo6_COiV8Wy0");
+		MassSendRespone massSendRes = wxClient.excute(massSendOpenidWxcardReq);
+		System.out.println(massSendRes.getBody());
+	}
     
 }

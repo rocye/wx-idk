@@ -84,4 +84,17 @@ public class KfSendReqTest {
         System.out.println(kfSendRes.getBody());
     }
 
+	/**
+	 * 测试发送卡券消息
+	 */
+	@Test
+	public void testSendWxcardReq() {
+		WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
+		String cardId = "pFYHLvlpbLoaHpnguo6_COiV8Wy0";
+		KfSendWxcardRequest kfSendWxcardReq = new KfSendWxcardRequest(Const.OPENID, cardId);
+		KfSendRespone kfSendRes = wxClient.excute(kfSendWxcardReq);
+		//{"errcode":0,"errmsg":"ok"}
+		System.out.println(kfSendRes.getBody());
+	}
+
 }
