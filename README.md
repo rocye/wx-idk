@@ -18,7 +18,7 @@
 <dependency>
     <groupId>com.github.rocye</groupId>
     <artifactId>wx-idk</artifactId>
-    <version>1.1.1</version>
+    <version>1.2.0</version>
 </dependency>
 ```
 ## Gradle
@@ -34,7 +34,7 @@ allprojects {
 添加依赖：
 ```
 dependencies {
-    compile 'com.github.rocye:wx-idk:1.1.1'
+    compile 'com.github.rocye:wx-idk:1.2.0'
 }
 ```
 # 使用说明
