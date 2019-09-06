@@ -3,3 +3,8 @@
 .idea/
 wx-idk.iml
 /src/test/resources/apiclient_cert.p12
+
+/.settings
+/.classpath
+/.project
+/.mvn/

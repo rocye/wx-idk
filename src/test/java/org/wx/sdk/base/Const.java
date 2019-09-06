@@ -14,13 +14,13 @@ public class Const {
     public static String OPENID = "oFYHLvkzNC8P_uZKPS7ppSuHiYwk";
 
 	//API密钥
-	public static String PaternerKey = "xxx";
+	public static String PaternerKey = "wxpaykeyguoxin2015wxpaykeyguoxin";
 	//证忆路径
-	public static String CertPath = "apiclient_cert.p12";
+	public static String CertPath = "F:\\IdeaProjects\\wx-idk\\src\\test\\resources\\apiclient_cert.p12";
 	//证书密码
-	public static String CertPass = "111";
+	public static String CertPass = "1226672102";
 	//商户ID
-	public static String MchId = "111";
+	public static String MchId = "1226672102";
 	//公众号APPID
-	public static String WxAppId = "xxx";
+	public static String WxAppId = "wx2eea98b5e0276a5d";
 }
