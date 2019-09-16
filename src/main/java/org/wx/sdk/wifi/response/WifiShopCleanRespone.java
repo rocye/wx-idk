@@ -1,7 +1,6 @@
 package org.wx.sdk.wifi.response;
 
 import org.wx.sdk.base.Response;
-import org.wx.sdk.wifi.object.WifiShopList;
 
 /**
  * 清空门店网络及设备返回对象

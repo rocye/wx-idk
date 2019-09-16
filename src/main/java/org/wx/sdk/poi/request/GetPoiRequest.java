@@ -1,13 +1,9 @@
 package org.wx.sdk.poi.request;
 
-import org.wx.sdk.base.Request;
-import org.wx.sdk.poi.object.Business;
-import org.wx.sdk.poi.object.Poi;
-import org.wx.sdk.poi.response.AddPoiRespone;
-import org.wx.sdk.poi.response.GetPoiRespone;
-
 import java.util.HashMap;
 import java.util.Map;
+import org.wx.sdk.base.Request;
+import org.wx.sdk.poi.response.GetPoiRespone;
 
 /**
  * 查询门店信息请求对象
@@ -54,13 +50,6 @@ public class GetPoiRequest implements Request<GetPoiRespone> {
         paramMap.put("poi_id", this.poi_id);
         wxHashMap.put("buffer", paramMap);
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

@@ -1,9 +1,7 @@
 package org.wx.sdk.card.request;
 
 import org.wx.sdk.base.Request;
-import org.wx.sdk.card.respone.GetCardCardinfoRespone;
 import org.wx.sdk.card.respone.GetCardMemberCardinfoRespone;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -62,13 +60,6 @@ public class GetCardMemberCardinfoRequest implements Request<GetCardMemberCardin
 		wxHashMap.put("end_date", this.end_date);
 		wxHashMap.put("cond_source", this.cond_source);
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

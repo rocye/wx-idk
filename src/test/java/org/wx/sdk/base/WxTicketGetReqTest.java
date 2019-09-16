@@ -10,7 +10,7 @@ public class WxTicketGetReqTest {
      */
     @Test
     public void testWxConfigGetReq() {
-    	String url = "http://w.weiyihui.com.cn/wxproj/wx/userTag/ooYY4wZhV4WAz7Ut61QXtNsts5sw";
+    	String url = "http://blog.rocye.cn";
         WxConfig config = RedisJsApiTicket.getInstance().getWxConfig(Const.APPID, Const.APPSERCT, url);
         System.out.println(config);
     }

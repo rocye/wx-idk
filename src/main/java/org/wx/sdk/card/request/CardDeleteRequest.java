@@ -2,8 +2,6 @@ package org.wx.sdk.card.request;
 
 import org.wx.sdk.base.Request;
 import org.wx.sdk.card.respone.CardDeleteRespone;
-import org.wx.sdk.card.respone.CardGetRespone;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -53,13 +51,6 @@ public class CardDeleteRequest implements Request<CardDeleteRespone> {
     public Map<String, Object> getWxHashMap(){
 		wxHashMap.put("card_id", this.card_id);
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

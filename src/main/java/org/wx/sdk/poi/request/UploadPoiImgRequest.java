@@ -3,7 +3,7 @@ package org.wx.sdk.poi.request;
 import org.apache.commons.lang3.StringUtils;
 import org.wx.sdk.base.Request;
 import org.wx.sdk.poi.response.UploadPoiImgRespone;
-import java.io.File;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,8 +38,8 @@ public class UploadPoiImgRequest implements Request<UploadPoiImgRespone> {
      * @param fullFilePath  媒体文件路径+文件名
      */
     public UploadPoiImgRequest(String fullFilePath) {
-        this.fileName = StringUtils.substringAfterLast(fullFilePath, File.separator);
-        this.filePath = StringUtils.substringBeforeLast(fullFilePath, File.separator) + File.separator;
+        this.fileName = Paths.get(fullFilePath).getFileName().toString();
+        this.filePath = StringUtils.remove(fullFilePath, this.fileName);
     }
 
     /**
@@ -65,13 +65,6 @@ public class UploadPoiImgRequest implements Request<UploadPoiImgRespone> {
 		wxHashMap.put("filePath", this.filePath);
 		wxHashMap.put("fileName", this.fileName);
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

@@ -1,9 +1,7 @@
 package org.wx.sdk.card.request;
 
 import org.wx.sdk.base.Request;
-import org.wx.sdk.card.respone.CardCodeGetRespone;
 import org.wx.sdk.card.respone.CardCodeUpdateRespone;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -75,13 +73,6 @@ public class CardCodeUpdateRequest implements Request<CardCodeUpdateRespone> {
 			wxHashMap.put("card_id", this.card_id);
 		}
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

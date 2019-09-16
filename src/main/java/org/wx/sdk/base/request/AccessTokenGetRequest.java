@@ -63,13 +63,6 @@ public class AccessTokenGetRequest implements Request<AccessTokenGetRespone> {
     }
 
     /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps() {
-        return true;
-    }
-
-    /**
      * 获取请求参数的HashMap
      */
     public Map<String, Object> getWxHashMap() {

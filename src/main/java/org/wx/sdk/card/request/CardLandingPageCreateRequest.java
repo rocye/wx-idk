@@ -43,10 +43,10 @@ public class CardLandingPageCreateRequest implements Request<CardLandingPageCrea
 	 */
 	public CardLandingPageCreateRequest(String banner, String pageTitle, Boolean canShare, String scene, List<MinCard> cardList) {
 		this.banner = banner;
-		this.page_title = page_title;
-		this.can_share = can_share;
+		this.page_title = pageTitle;
+		this.can_share = canShare;
 		this.scene = scene;
-		this.card_list = card_list;
+		this.card_list = cardList;
 	}
 
 	/**
@@ -69,13 +69,6 @@ public class CardLandingPageCreateRequest implements Request<CardLandingPageCrea
      */
     public Map<String, Object> getWxHashMap(){
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

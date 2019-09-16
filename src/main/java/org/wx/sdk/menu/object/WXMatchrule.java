@@ -1,7 +1,5 @@
 package org.wx.sdk.menu.object;
 
-import java.io.Serializable;
-
 import com.alibaba.fastjson.JSON;
 
 /**

@@ -68,13 +68,6 @@ public class TempVideoAddRequest implements Request<TempVideoAddRespone> {
     }
     
     /**
-     * 获取请求是否是Https(这里用https有问题)
-     */
-    public boolean getUseHttps(){
-        return false;
-    }
-    
-    /**
      * 请求类型：1-普通Get 2-下载GET 3-普通POST 4-下载POST 5-无参上传   6-有参上传
      */
     public int getReqType(){

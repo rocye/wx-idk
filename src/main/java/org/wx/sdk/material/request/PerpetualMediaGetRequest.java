@@ -1,6 +1,6 @@
 package org.wx.sdk.material.request;
 
-import java.io.File;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
@@ -38,8 +38,8 @@ public class PerpetualMediaGetRequest implements Request<PerpetualMediaGetRespon
      */
     public PerpetualMediaGetRequest(String mediaId, String fullDownPath) {
         this.media_id = mediaId;
-        this.fileName = StringUtils.substringAfterLast(fullDownPath, File.separator);
-        this.filePath = StringUtils.substringBeforeLast(fullDownPath, File.separator) + File.separator;
+        this.fileName = Paths.get(fullDownPath).getFileName().toString();
+        this.filePath = StringUtils.remove(fullDownPath, this.fileName);
     }
 
     /**
@@ -65,13 +65,6 @@ public class PerpetualMediaGetRequest implements Request<PerpetualMediaGetRespon
         wxHashMap.put("filePath", this.filePath);
         wxHashMap.put("fileName", this.fileName);
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

@@ -53,13 +53,6 @@ public class JsApiTicketGetRequest implements Request<JsApiTicketGetRespone> {
     }
 
     /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps() {
-        return true;
-    }
-
-    /**
      * 设置AccessToken
      */
     public void setAccessToken(String accessToken){

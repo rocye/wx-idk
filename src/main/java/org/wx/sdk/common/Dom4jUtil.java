@@ -10,11 +10,9 @@ import org.dom4j.Element;
 /**
  * dom4j解析XML工具类
  * @author Rocye
- * @version 2013-10-21
+ * @version 2019.09.06
  */
 public class Dom4jUtil {
-
-	/** 日志对象 */
     private final static Logger logger = Logger.getLogger(Dom4jUtil.class.getName());
 
     /**
@@ -47,8 +45,8 @@ public class Dom4jUtil {
 	 * @return 键值对
 	 * @version 2017.11.15
 	 */
-	public static Map Element2Map(Element outele, Map outmap) {
-		List<Element> list = outele.elements();		//必定返回0,1,2,3,....... 不会异常
+	public static Map<String, Object> Element2Map(Element outele, Map<String, Object> outmap) {
+		List<Element> list = outele.elements();
 		int size = list.size();
 		if (size == 0) {	//当前节点是叶子节点(outele如果为叶子节点,是不可能有子节点的,因为它里面是纯文本)
 			outmap.put(outele.getName(), outele.getTextTrim());
@@ -61,10 +59,10 @@ public class Dom4jUtil {
 					Element2Map(ele1, innermap);
 				} else {
 					if (obj instanceof java.util.Map) {		//如果没有生成过list,把原来的单个map合并到新的list
-						List<Map> list1 = new ArrayList<Map>();
-						list1.add((Map) innermap.remove(eleName));
+						List<Map<String, Object>> list1 = new ArrayList<>();
+						list1.add((Map<String, Object>)innermap.remove(eleName));
 						Element2Map(ele1, innermap);
-						list1.add((Map) innermap.remove(eleName));
+						list1.add((Map<String, Object>)innermap.remove(eleName));
 						innermap.put(eleName, list1);
 					} else {	//如果不是map,必然是list,只有这两种情况,所以不再else if 条件判断
 						Element2Map(ele1, innermap);

@@ -1,9 +1,7 @@
 package org.wx.sdk.mutikf.response;
 
 import org.wx.sdk.base.Response;
-import org.wx.sdk.mutikf.object.KfSession;
 import org.wx.sdk.mutikf.object.Msgrecord;
-
 import java.util.List;
 
 /**

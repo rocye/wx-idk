@@ -50,8 +50,8 @@ public class CardModifyStockRequest implements Request<CardModifyStockRespone> {
 	 */
 	public CardModifyStockRequest(String cardId, Integer increaseStockValue, Integer reduceStockValue) {
 		this.card_id = cardId;
-		this.increase_stock_value = increase_stock_value;
-		this.reduce_stock_value = reduce_stock_value;
+		this.increase_stock_value = increaseStockValue;
+		this.reduce_stock_value = reduceStockValue;
 	}
 
 	/**
@@ -81,13 +81,6 @@ public class CardModifyStockRequest implements Request<CardModifyStockRespone> {
 			wxHashMap.put("reduce_stock_value", this.reduce_stock_value);
 		}
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

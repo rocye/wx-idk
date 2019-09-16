@@ -2,8 +2,6 @@ package org.wx.pay.mode.request;
 
 import org.wx.pay.base.Request;
 import org.wx.pay.mode.response.CloseOrderRespone;
-import org.wx.pay.mode.response.OrderQueryRespone;
-
 import java.util.HashMap;
 import java.util.Map;
 

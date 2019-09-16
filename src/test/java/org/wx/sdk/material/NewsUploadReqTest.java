@@ -24,18 +24,18 @@ public class NewsUploadReqTest {
         WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
         
 //        //群发接口上传图文无法用永久缩略图ID
-//        PerpetualMaterialAddRequest materialAddReq = new PerpetualMaterialAddRequest("thumb", "D:\\Rocye\\Pictures\\460.jpg");
+//        PerpetualMaterialAddRequest materialAddReq = new PerpetualMaterialAddRequest("thumb", "D:/Rocye/Pictures/460.jpg");
 //        PerpetualMaterialAddRespone materialAddRes = wxClient.excute(materialAddReq);
 //        System.out.println(materialAddRes.getBody());
 //        String thumbMediaId = materialAddRes.getMedia_id();
         
         //临时缩略图ID测试成功
-        TempMaterialAddRequest tempMaterialAddReq = new TempMaterialAddRequest("thumb", "D:\\Rocye\\Pictures\\460.jpg");
+        TempMaterialAddRequest tempMaterialAddReq = new TempMaterialAddRequest("thumb", "D:/Rocye/Pictures/460.jpg");
         TempMaterialAddRespone tempMaterialAddRes = wxClient.excute(tempMaterialAddReq);
         System.out.println(tempMaterialAddRes.getBody());
         String thumbMediaId = tempMaterialAddRes.getThumb_media_id();
         
-        NewsInnerImgAddRequest innerImgAddReq = new NewsInnerImgAddRequest("D:\\Rocye\\Pictures\\11.png");
+        NewsInnerImgAddRequest innerImgAddReq = new NewsInnerImgAddRequest("D:/Rocye/Pictures/11.png");
         NewsInnerImgAddRespone innerImgAddRes = wxClient.excute(innerImgAddReq);
         System.out.println(innerImgAddRes.getBody());
         String img = innerImgAddRes.getUrl();

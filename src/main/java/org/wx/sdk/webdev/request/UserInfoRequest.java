@@ -46,14 +46,8 @@ public class UserInfoRequest implements Request<UserInfoRespone> {
      * 获取请求参数的HashMap
      */
     public Map<String, Object> getWxHashMap(){
-        return null;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
+    	this.wxHashMap = null;
+        return this.wxHashMap;
     }
     
     /**

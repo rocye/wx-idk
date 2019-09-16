@@ -52,7 +52,7 @@ public class MassPreviewReqTest {
     @Test
     public void testPreviewImageReq() {
         WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
-        TempMaterialAddRequest tempMaterialAddReq = new TempMaterialAddRequest("image", "D:\\Rocye\\Pictures\\325ac5f7da3c46652e5398f4cb223292.jpg");
+        TempMaterialAddRequest tempMaterialAddReq = new TempMaterialAddRequest("image", "D:/Rocye/Pictures/147235488052.jpg");
         TempMaterialAddRespone tempMaterialAddRes = wxClient.excute(tempMaterialAddReq);
         System.out.println(tempMaterialAddRes.getBody());
         
@@ -69,7 +69,7 @@ public class MassPreviewReqTest {
     @Test
     public void testPreviewVoiceReq() {
         WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
-        TempMaterialAddRequest tempMaterialAddReq = new TempMaterialAddRequest("voice", "D:\\Rocye\\Pictures\\1444288195077.mp3");
+        TempMaterialAddRequest tempMaterialAddReq = new TempMaterialAddRequest("voice", "D:/Rocye/Pictures/1444288195077.mp3");
         TempMaterialAddRespone tempMaterialAddRes = wxClient.excute(tempMaterialAddReq);
         System.out.println(tempMaterialAddRes.getBody());
         
@@ -88,7 +88,7 @@ public class MassPreviewReqTest {
         //临时视频第一次上传
         WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
         String type = "video";
-        String filePath = "D:\\Rocye\\Pictures\\20140423162603.mp4";
+        String filePath = "D:/Rocye/Pictures/20140423162603.mp4";
         TempMaterialAddRequest tempMaterialAddReq = new TempMaterialAddRequest(type, filePath);
         TempMaterialAddRespone tempMaterialAddRes = wxClient.excute(tempMaterialAddReq);
         System.out.println(tempMaterialAddRes.getBody());

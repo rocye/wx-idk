@@ -14,7 +14,6 @@ import org.wx.pay.tool.response.SendRedpackRespone;
 import org.wx.sdk.base.Const;
 import org.wx.sdk.common.DateUtil;
 import org.wx.sdk.common.Dom4jUtil;
-
 import java.net.URLEncoder;
 import java.util.Date;
 import java.util.HashMap;

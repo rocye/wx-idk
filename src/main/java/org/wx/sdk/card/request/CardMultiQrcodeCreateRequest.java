@@ -1,10 +1,8 @@
 package org.wx.sdk.card.request;
 
-import com.google.common.collect.Maps;
 import org.wx.sdk.base.Request;
 import org.wx.sdk.card.object.Card;
 import org.wx.sdk.card.respone.CardQrcodeCreateRespone;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -76,19 +74,12 @@ public class CardMultiQrcodeCreateRequest implements Request<CardQrcodeCreateRes
 		if(this.expire_seconds != null){
 			wxHashMap.put("expire_seconds", this.expire_seconds);
 		}
-		Map<String, Object> multiCardMap = Maps.newHashMap();
+		Map<String, Object> multiCardMap = new HashMap<>();
 		multiCardMap.put("card_list", this.card_list);
-        Map<String, Object> actionInfoMap = Maps.newHashMap();
+        Map<String, Object> actionInfoMap = new HashMap<>();
 		actionInfoMap.put("multiple_card", multiCardMap);
 		wxHashMap.put("action_info", actionInfoMap);
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

@@ -2,8 +2,6 @@ package org.wx.sdk.wifi.request;
 
 import org.wx.sdk.base.Request;
 import org.wx.sdk.wifi.response.WifiBarSetRespone;
-import org.wx.sdk.wifi.response.WifiHomepageSetRespone;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -62,13 +60,6 @@ public class WifiBarSetRequest implements Request<WifiBarSetRespone> {
 		wxHashMap.put("shop_id", this.shop_id);
 		wxHashMap.put("bar_type", this.bar_type);
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

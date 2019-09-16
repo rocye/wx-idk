@@ -2,9 +2,7 @@ package org.wx.sdk.wifi.response;
 
 import org.wx.sdk.base.Response;
 import org.wx.sdk.wifi.object.WifiStatistics;
-
 import java.util.List;
-import java.util.Map;
 
 /**
  * Wi-Fi数据统计返回对象

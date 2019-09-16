@@ -4,6 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.wx.sdk.base.Request;
 import org.wx.sdk.card.respone.CardImgUploadRespone;
 import java.io.File;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,8 +41,8 @@ public class CardImgUploadRequest implements Request<CardImgUploadRespone> {
      * @param fullFilePath  媒体文件路径+文件名
      */
     public CardImgUploadRequest(String fullFilePath) {
-        this.fileName = StringUtils.substringAfterLast(fullFilePath, File.separator);
-        this.filePath = StringUtils.substringBeforeLast(fullFilePath, File.separator) + File.separator;
+    	this.fileName = Paths.get(fullFilePath).getFileName().toString();
+        this.filePath = StringUtils.remove(fullFilePath, this.fileName);
     }
 
     /**
@@ -67,13 +68,6 @@ public class CardImgUploadRequest implements Request<CardImgUploadRespone> {
 		wxHashMap.put("filePath", this.filePath);
 		wxHashMap.put("fileName", this.fileName);
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

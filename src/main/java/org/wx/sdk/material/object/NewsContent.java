@@ -1,12 +1,11 @@
 package org.wx.sdk.material.object;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
  * 批量返回的图文列表中的一篇图文素材项的内容
  * @author Rocye
- * @version 2016-06-27
+ * @version 2016.06.27
  */
 public class NewsContent {
     /** 图文素材的文章列表 */

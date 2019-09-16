@@ -22,7 +22,7 @@ public class QrcodeCreateReqTest {
         System.out.println(tempQrCreateRes.getBody());
         
         String ticket = tempQrCreateRes.getTicket();
-        ShowQrcodeRequest showQrcodeReq = new ShowQrcodeRequest(ticket, "C:\\xx\\x.jpg");
+        ShowQrcodeRequest showQrcodeReq = new ShowQrcodeRequest(ticket, "D:/Rocye/Pictures/x.jpg");
         ShowQrcodeRespone showQrcodeRes = wxClient.excute(showQrcodeReq);
         System.out.println(showQrcodeRes.getBody());
     }
@@ -38,7 +38,7 @@ public class QrcodeCreateReqTest {
         System.out.println(tempQrCreateRes.getBody());
         
         String ticket = tempQrCreateRes.getTicket();
-        ShowQrcodeRequest showQrcodeReq = new ShowQrcodeRequest(ticket, "C:\\xx\\y.jpg");
+        ShowQrcodeRequest showQrcodeReq = new ShowQrcodeRequest(ticket, "D:/Rocye/Pictures/y.jpg");
         ShowQrcodeRespone showQrcodeRes = wxClient.excute(showQrcodeReq);
         System.out.println(showQrcodeRes.getBody());
     }
@@ -54,7 +54,7 @@ public class QrcodeCreateReqTest {
         System.out.println(tempQrCreateRes.getBody());
         
         String ticket = tempQrCreateRes.getTicket();
-        ShowQrcodeRequest showQrcodeReq = new ShowQrcodeRequest(ticket, "C:\\xx\\xx.jpg");
+        ShowQrcodeRequest showQrcodeReq = new ShowQrcodeRequest(ticket, "D:/Rocye/Pictures/xx.jpg");
         ShowQrcodeRespone showQrcodeRes = wxClient.excute(showQrcodeReq);
         System.out.println(showQrcodeRes.getBody());
     }
@@ -70,7 +70,7 @@ public class QrcodeCreateReqTest {
         System.out.println(tempQrCreateRes.getBody());
         
         String ticket = tempQrCreateRes.getTicket();
-        ShowQrcodeRequest showQrcodeReq = new ShowQrcodeRequest(ticket, "C:\\xx\\yy.jpg");
+        ShowQrcodeRequest showQrcodeReq = new ShowQrcodeRequest(ticket, "D:/Rocye/Pictures/yy.jpg");
         ShowQrcodeRespone showQrcodeRes = wxClient.excute(showQrcodeReq);
         System.out.println(showQrcodeRes.getBody());
     }

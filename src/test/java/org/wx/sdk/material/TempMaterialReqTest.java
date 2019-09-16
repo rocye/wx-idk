@@ -18,18 +18,18 @@ public class TempMaterialReqTest {
     public void testTempMediaAddReq() {
         WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
         
-        int typ = 1;
+        int typ = 2;
         String type = "image";
-        String filePath = "D:\\Rocye\\Pictures\\325ac5f7da3c46652e5398f4cb223292.jpg";
+        String filePath = "D:/Rocye/Pictures/11.png";		//ISemATOOWToykrBF8ULKuxZSPpyeaBi-AE3JTQPpa9-Ju-7KFTPezoJ1W80ls99i
         if(typ == 2){
             type = "voice";
-            filePath = "D:\\Rocye\\Pictures\\1444288195077.mp3";
+            filePath = "D:/Rocye/Pictures/1444288195077.mp3";	//zOOspCfpsKgyUOi-WprcC9bicFkuSCk7ZNn7euyy4h3Zi2mfyq26LvPtkyxuxKNd
         }else if(typ == 3){
             type = "video";
-            filePath = "D:\\Rocye\\Pictures\\20140423162603.mp4";
+            filePath = "D:/Rocye/Pictures/20140423162603.mp4";
         }else if(typ == 4){
             type = "thumb";
-            filePath = "D:\\Rocye\\Pictures\\3.JPG";
+            filePath = "D:/Rocye/Pictures/3.JPG";
         }
         TempMaterialAddRequest tempMaterialAddReq = new TempMaterialAddRequest(type, filePath);
         TempMaterialAddRespone tempMaterialAddRes = wxClient.excute(tempMaterialAddReq);
@@ -42,8 +42,8 @@ public class TempMaterialReqTest {
     @Test
     public void testTempMediaGetReq() {
         WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
-        String mediaId = "8t5P8l6ZTyJGm8qi89B-fZF385G_SApB2dF4i_uDLJry8f3BPnJggSYWwjQ0-M6s";
-        String filePath = "C:\\Pictures\\"+ System.currentTimeMillis() +".mp3";
+        String mediaId = "zOOspCfpsKgyUOi-WprcC9bicFkuSCk7ZNn7euyy4h3Zi2mfyq26LvPtkyxuxKNd";
+        String filePath = "D:/Rocye/Pictures/"+ System.currentTimeMillis() +".mp3";
         TempMaterialGetRequest tempMaterialGetReq = new TempMaterialGetRequest(mediaId, filePath);
         TempMaterialGetRespone tempMaterialGetRes = wxClient.excute(tempMaterialGetReq);
         System.out.println(tempMaterialGetRes.getBody());

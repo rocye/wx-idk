@@ -2,8 +2,6 @@ package org.wx.pay.tool.request;
 
 import org.wx.pay.base.Request;
 import org.wx.pay.tool.response.QyTransfersRespone;
-import org.wx.pay.tool.response.SendRedpackRespone;
-
 import java.util.HashMap;
 import java.util.Map;
 

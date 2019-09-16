@@ -2,8 +2,6 @@ package org.wx.sdk.mutikf.request;
 
 import org.wx.sdk.base.Request;
 import org.wx.sdk.mutikf.response.KfMsgrecordListRespone;
-import org.wx.sdk.mutikf.response.KfSessionCreateRespone;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -66,13 +64,6 @@ public class KfMsgrecordListRequest implements Request<KfMsgrecordListRespone> {
         wxHashMap.put("msgid", this.msgid);
         wxHashMap.put("number", this.number);
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

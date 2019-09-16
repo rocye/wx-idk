@@ -1,9 +1,8 @@
 package org.wx.sdk.generalize.request;
 
-import java.io.File;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.apache.commons.lang3.StringUtils;
 import org.wx.sdk.base.Request;
 import org.wx.sdk.generalize.response.ShowQrcodeRespone;
@@ -34,8 +33,8 @@ public class ShowQrcodeRequest implements Request<ShowQrcodeRespone> {
      */
     public ShowQrcodeRequest(String ticket, String fullDownPath) {
 		this.ticket = ticket;
-		this.fileName = StringUtils.substringAfterLast(fullDownPath, File.separator);
-        this.filePath = StringUtils.substringBeforeLast(fullDownPath, File.separator) + File.separator;
+		this.fileName = Paths.get(fullDownPath).getFileName().toString();
+        this.filePath = StringUtils.remove(fullDownPath, this.fileName);
 	}
 
 	/**
@@ -60,13 +59,6 @@ public class ShowQrcodeRequest implements Request<ShowQrcodeRespone> {
     	wxHashMap.put("filePath", this.filePath);
         wxHashMap.put("fileName", this.fileName);
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

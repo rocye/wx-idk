@@ -1,11 +1,7 @@
 package org.wx.sdk.wifi.request;
 
 import org.wx.sdk.base.Request;
-import org.wx.sdk.poi.object.Business;
-import org.wx.sdk.poi.object.Poi;
-import org.wx.sdk.poi.response.AddPoiRespone;
 import org.wx.sdk.wifi.response.WifiShopListRespone;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -70,13 +66,6 @@ public class WifiShopListRequest implements Request<WifiShopListRespone> {
 			wxHashMap.put("pagesize", this.pagesize);
 		}
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

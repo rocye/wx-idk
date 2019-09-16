@@ -1,7 +1,5 @@
 package org.wx.open.authorize.response;
 
-import org.wx.open.authorize.object.AuthorizationInfoX;
-import org.wx.open.authorize.object.AuthorizerInfoX;
 import org.wx.sdk.base.Response;
 
 /**

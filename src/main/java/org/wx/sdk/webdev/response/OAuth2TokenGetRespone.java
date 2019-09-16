@@ -2,8 +2,6 @@ package org.wx.sdk.webdev.response;
 
 import org.wx.sdk.base.Response;
 
-import java.util.List;
-
 /**
  * 通过code换取网页授权access_token 返回对象
  * @author Rocye

@@ -36,15 +36,7 @@ public class GetPoiCategoryRequest implements Request<GetPoiCategoryRespone> {
      * 获取请求参数的HashMap
      */
     public Map<String, Object> getWxHashMap(){
-        Map<String, Object> paramMap = new HashMap<String, Object>();
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

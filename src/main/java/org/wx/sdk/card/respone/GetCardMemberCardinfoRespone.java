@@ -1,9 +1,7 @@
 package org.wx.sdk.card.respone;
 
 import org.wx.sdk.base.Response;
-import org.wx.sdk.card.object.Bizuininfo;
 import org.wx.sdk.card.object.MemberCardinfo;
-
 import java.util.List;
 
 /**

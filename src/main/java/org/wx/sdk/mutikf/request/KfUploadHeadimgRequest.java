@@ -1,6 +1,6 @@
 package org.wx.sdk.mutikf.request;
 
-import java.io.File;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
@@ -35,8 +35,8 @@ public class KfUploadHeadimgRequest implements Request<KfAccountRespone> {
      */
     public KfUploadHeadimgRequest(String kfAccount, String fullFilePath) {
         this.kf_account = kfAccount;
-        this.fileName = StringUtils.substringAfterLast(fullFilePath, File.separator);
-        this.filePath = StringUtils.substringBeforeLast(fullFilePath, File.separator) + File.separator;
+        this.fileName = Paths.get(fullFilePath).getFileName().toString();
+        this.filePath = StringUtils.remove(fullFilePath, this.fileName);
     }
 
     /**
@@ -61,13 +61,6 @@ public class KfUploadHeadimgRequest implements Request<KfAccountRespone> {
         wxHashMap.put("filePath", this.filePath);
         wxHashMap.put("fileName", this.fileName);
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

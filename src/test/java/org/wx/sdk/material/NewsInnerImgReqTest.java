@@ -16,7 +16,7 @@ public class NewsInnerImgReqTest {
     public void testTempMediaAddReq() {
         WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
         
-        String filePath = "D:\\Rocye\\Pictures\\1.JPG";
+        String filePath = "D:/Rocye/Pictures/1.JPG";
         NewsInnerImgAddRequest newsInnerImgAddReq = new NewsInnerImgAddRequest(filePath);
         NewsInnerImgAddRespone newsInnerImgAddRes = wxClient.excute(newsInnerImgAddReq);
 

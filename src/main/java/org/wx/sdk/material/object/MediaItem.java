@@ -1,11 +1,9 @@
 package org.wx.sdk.material.object;
 
-import java.io.Serializable;
-
 /**
  * 批量返回的其它素材（图片、语音、视频）列表中的一个素材项
  * @author Rocye
- * @version 2016-06-27
+ * @version 2016.06.27
  */
 public class MediaItem {
     /** 素材ID */

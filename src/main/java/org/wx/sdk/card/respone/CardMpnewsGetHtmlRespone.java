@@ -2,8 +2,6 @@ package org.wx.sdk.card.respone;
 
 import org.wx.sdk.base.Response;
 
-import java.util.List;
-
 /**
  * 图文消息群发卡券返回对象
  * @author Rocye

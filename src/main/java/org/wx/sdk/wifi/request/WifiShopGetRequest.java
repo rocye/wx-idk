@@ -2,8 +2,6 @@ package org.wx.sdk.wifi.request;
 
 import org.wx.sdk.base.Request;
 import org.wx.sdk.wifi.response.WifiShopGetRespone;
-import org.wx.sdk.wifi.response.WifiShopListRespone;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -58,13 +56,6 @@ public class WifiShopGetRequest implements Request<WifiShopGetRespone> {
     public Map<String, Object> getWxHashMap(){
 		wxHashMap.put("shop_id", this.shop_id);
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

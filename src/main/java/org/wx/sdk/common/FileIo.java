@@ -7,17 +7,15 @@ import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 
 /**
  * 文件操作类
  * @author Rocye
- * @version 2017-02-28
+ * @version 2017.02.28
  */
 public class FileIo {
-	/** 日志对象 */
-    private static final Logger logger = Logger.getLogger(FileIo.class.getName());
+	private final static Logger logger = Logger.getLogger(FileIo.class.getName());
     
 	/**
 	 * 写文本文件内容
@@ -26,7 +24,7 @@ public class FileIo {
 	 * @param fileContent 文本文件内容
 	 * @param encoding 编码方式 例如 GBK 或者 UTF-8
 	 * @return 文本文件完整绝对路径及文件名 或 null
-	 * @version 2017-02-28
+	 * @version 2017.02.28
 	 */
 	public static String writeText(String filePathAndName, String fileContent, String encoding) {
 		if (encoding == null || encoding.equals("")){
@@ -49,7 +47,7 @@ public class FileIo {
 	 * @param fileContent 文本文件内容
 	 * @param encoding 编码方式 例如 GBK 或者 UTF-8 默认UTF-8
 	 * @return 文本文件完整绝对路径及文件名 或 null
-	 * @version 2017-02-28
+	 * @version 2017.02.28
 	 */
 	public static String appendWriteText(String filePathAndName, String fileContent, String encoding) {
 		if (encoding == null || encoding.equals("")){
@@ -71,7 +69,7 @@ public class FileIo {
 	 * @param filePathAndName 带有完整绝对路径的文件名
 	 * @param encoding 文本文件打开的编码方式 GBK UTF-8
 	 * @return 返回文本文件的内容
-	 * @version 2017-02-28
+	 * @version 2017.02.28
 	 */
 	public static String readText(String filePathAndName, String encoding) {
 		if (encoding == null || encoding.equals("")){
@@ -93,7 +91,7 @@ public class FileIo {
 	 * @param filePathAndName 保存的文件
 	 * @param append 是否追加写入
 	 * @return 保存的文件名
-	 * @version 2017-02-28
+	 * @version 2017.02.28
 	 */
 	public static String writeFile(InputStream inputStream, String filePathAndName, boolean append) {
 		OutputStream out = null;
@@ -112,7 +110,13 @@ public class FileIo {
         	e.printStackTrace();
         	logger.error("调用ApacheCommon写二进制流到指定文件时：" + e.toString());
         }finally {
-            IOUtils.closeQuietly(out);
+            if(out != null) {
+            	try {
+					out.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+            }
         }
 		return fileName;
 	}
@@ -133,7 +137,7 @@ public class FileIo {
 	 * @param filePathAndName 保存的文件
 	 * @param append 是否追加写入
 	 * @return 保存的文件名
-	 * @version 2017-02-28
+	 * @version 2017.02.28
 	 */
 	public static String writeFile(byte[] data, String filePathAndName, boolean append) {
 		String fileName = null;
@@ -153,7 +157,7 @@ public class FileIo {
 	 * @param data 二进制数据
 	 * @param filePathAndName 保存的文件
 	 * @return 保存的文件名
-	 * @version 2017-02-28
+	 * @version 2017.02.28
 	 */
 	public static String writeFile(byte[] data, String filePathAndName){
 		return writeFile(data, filePathAndName, false);
@@ -163,7 +167,7 @@ public class FileIo {
 	 * 读取二进制文件
 	 * @param filePathAndName 带有完整绝对路径的文件名
 	 * @return 二进制数据
-	 * @version 2017-02-28
+	 * @version 2017.02.28
 	 */
 	public static byte[] readFile(String filePathAndName) {
 		byte[] byteA = null;
@@ -181,7 +185,7 @@ public class FileIo {
 	 * @author Rocye
 	 * @param multiFolderPath 要创建的目录路径
 	 * @return true OR false
-	 * @version 2017-02-28
+	 * @version 2017.02.28
 	 */
 	public static boolean createFolders(String multiFolderPath) {
 		try {
@@ -199,7 +203,7 @@ public class FileIo {
 	 * @author Rocye
 	 * @param folderPath 目录
 	 * @return true OR false
-	 * @version 2017-02-28
+	 * @version 2017.02.28
 	 */
 	public static boolean createFolder(String folderPath) {
 		try {
@@ -217,7 +221,7 @@ public class FileIo {
 	 * @author Rocye
 	 * @param filePathAndName 文本文件完整绝对路径及文件名
 	 * @return true OR false
-	 * @version 2017-02-28
+	 * @version 2017.02.28
 	 */
 	public static boolean deleteFile(String filePathAndName) {
 		FileUtils.deleteQuietly(new File(filePathAndName));
@@ -229,7 +233,7 @@ public class FileIo {
 	 * @author Rocye
 	 * @param folderPath 文件夹完整绝对路径
 	 * @return true OR false
-	 * @version 2017-02-28
+	 * @version 2017.02.28
 	 */
 	public static boolean deleteAllFile(String folderPath) {
 		try {
@@ -247,7 +251,7 @@ public class FileIo {
 	 * @author Rocye
 	 * @param folderPath 文件夹完整绝对路径
 	 * @return true OR false
-	 * @version 2017-02-28
+	 * @version 2017.02.28
 	 */
 	public static boolean deleteFolder(String folderPath) {
 		try {
@@ -266,7 +270,7 @@ public class FileIo {
 	 * @param srcFilePath 	复制的源文件路径
 	 * @param destFilePath 	复制的目标文件路径
 	 * @return true OR false
-	 * @version 2017-02-28
+	 * @version 2017.02.28
 	 */
 	public static boolean copyFile(String srcFilePath, String destFilePath) {
 		try {
@@ -286,7 +290,7 @@ public class FileIo {
 	 * @param destPath 	复制的目标文件夹路径
 	 * @param isCopyRoot 是否复制根目录 true为复制根目录 false为不复制根目录，只复制根目录下的所有文件以及文件夹
 	 * @return true OR false
-	 * @version 2017-02-28
+	 * @version 2017.02.28
 	 */
 	public static boolean copyFolder(String srcPath, String destPath, boolean isCopyRoot) {
 		try {
@@ -309,7 +313,7 @@ public class FileIo {
 	 * @param srcPath 	移动的源文件路径
 	 * @param destPath 	移动的目标文件路径
 	 * @return true OR false
-	 * @version 2017-02-28
+	 * @version 2017.02.28
 	 */
 	public static boolean moveFile(String srcPath, String destPath) {
 		try {
@@ -329,7 +333,7 @@ public class FileIo {
 	 * @param destPath 	移动目录的目的路径
 	 * @param isMoveRoot 是否移动根目录 true 为移动根目录 false 为不移动根目录，只移动根目录下的所有文件以及文件夹
 	 * @return true OR false
-	 * @version 2017-02-28
+	 * @version 2017.02.28
 	 */
 	public static boolean moveFolder(String srcPath, String destPath, boolean isMoveRoot) {
 		try {
@@ -443,13 +447,6 @@ public class FileIo {
                 logger.error(e.toString());
             }
         }
-	}   
-
-	/**
-	 * 测试方法
-	 * @param args args
-	 */
-	public static void main(String args[]) {
-        //System.out.println(downloadWebFile("http://image142.poco.cn/mypoco/myphoto/20130416/19/2985964120130416193102085_640.jpg", "C:\\test\\3.jpg"));
 	}
+
 }

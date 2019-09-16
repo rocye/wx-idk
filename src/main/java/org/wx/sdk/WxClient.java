@@ -89,11 +89,11 @@ public class WxClient {
                 request.setAccessToken(this.getAccessToken());
             }
             if(request.getReqType() == 1){
-                requestRes = HttpRequestTools.getInstance().sendGet(request.getApiUrl(), request.getUseHttps());
+                requestRes = HttpRequestTools.getInstance().sendGet(request.getApiUrl(), "UTF-8");
             }else if(request.getReqType() == 2){
                 String filePath = request.getWxHashMap().get("filePath").toString();
                 String fileName = request.getWxHashMap().get("fileName").toString();
-                requestRes = HttpRequestTools.getInstance().downGet(request.getApiUrl(), filePath, fileName, request.getUseHttps());
+                requestRes = HttpRequestTools.getInstance().downGet(request.getApiUrl(), filePath, fileName, "UTF-8");
             }else if(request.getReqType() == 3){
                 String param = null;
                 if(request.getParamFormat().equals("json")){
@@ -104,23 +104,26 @@ public class WxClient {
                     logger.warn("["+ request.getResponseClass() +"]参数格式不正确...");
                 }
                 if(param != null){
-                    requestRes = HttpRequestTools.getInstance().sendPost(request.getApiUrl(), param, request.getUseHttps());
+                    requestRes = HttpRequestTools.getInstance().sendPost(request.getApiUrl(), param, request.getParamFormat(), "UTF-8");
                 }else{
                     requestRes = "{\"errcode\":1,\"errmsg\":\"参数有误\"}";
                 }
             }else if(request.getReqType() == 4){
                 String param = null;
-                String filePath = request.getWxHashMap().get("filePath").toString();
-                String fileName = request.getWxHashMap().get("fileName").toString();
+                Map<String, Object> paraMap = request.getWxHashMap();
+                String filePath = paraMap.get("filePath").toString();
+                String fileName = paraMap.get("fileName").toString();
+                paraMap.remove("filePath");
+                paraMap.remove("fileName");
                 if(request.getParamFormat().equals("json")){
-                    param = JSON.toJSONString(request.getWxHashMap());
+                    param = JSON.toJSONString(paraMap);
                 }else if(request.getParamFormat().equals("xml")){
-                    param = Dom4jUtil.getXmlStrByMap(request.getWxHashMap());
+                    param = Dom4jUtil.getXmlStrByMap(paraMap);
                 }else{
                     logger.warn("["+ request.getResponseClass() +"]参数格式不正确...");
                 }
                 if(param != null){
-                    requestRes = HttpRequestTools.getInstance().downPost(request.getApiUrl(), param, filePath, fileName, request.getUseHttps());
+                    requestRes = HttpRequestTools.getInstance().downPost(request.getApiUrl(), param, filePath, fileName, request.getParamFormat(), "UTF-8");
                 }else{
                     requestRes = "{\"errcode\":1,\"errmsg\":\"参数有误\"}";
                 }
@@ -130,9 +133,9 @@ public class WxClient {
                 File file = new File(filePath + fileName);
                 if(request.getWxHashMap().containsKey("name")){
                 	String name = request.getWxHashMap().get("name").toString();
-					requestRes = HttpRequestTools.getInstance().uploadPost(request.getApiUrl(), name, file, request.getUseHttps());
+					requestRes = HttpRequestTools.getInstance().uploadPost(request.getApiUrl(), name, file, "UTF-8");
 				}else{
-					requestRes = HttpRequestTools.getInstance().uploadPost(request.getApiUrl(), file, request.getUseHttps());
+					requestRes = HttpRequestTools.getInstance().uploadPost(request.getApiUrl(), file, "UTF-8");
 				}
             }else if(request.getReqType() == 6){
                 String filePath = request.getWxHashMap().get("filePath").toString();
@@ -144,7 +147,7 @@ public class WxClient {
                         paramMap.put(tmpKey, request.getWxHashMap().get(tmpKey));
                     }
                 }
-                requestRes = HttpRequestTools.getInstance().uploadPost(request.getApiUrl(), file, paramMap, request.getUseHttps());
+                requestRes = HttpRequestTools.getInstance().uploadPost(request.getApiUrl(), "media", file, paramMap, "UTF-8");
             }
             
             if (StringUtils.isEmpty(requestRes)) {

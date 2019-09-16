@@ -1,9 +1,8 @@
 package org.wx.sdk.material.request;
 
-import java.io.File;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.apache.commons.lang3.StringUtils;
 import org.wx.sdk.base.Request;
 import org.wx.sdk.material.response.TempMaterialAddRespone;
@@ -44,8 +43,8 @@ public class TempMaterialAddRequest implements Request<TempMaterialAddRespone> {
      */
     public TempMaterialAddRequest(String type, String fullFilePath) {
         this.type = type;
-        this.fileName = StringUtils.substringAfterLast(fullFilePath, File.separator);
-        this.filePath = StringUtils.substringBeforeLast(fullFilePath, File.separator) + File.separator;
+        this.fileName = Paths.get(fullFilePath).getFileName().toString();
+        this.filePath = StringUtils.remove(fullFilePath, this.fileName);
     }
 
     /**
@@ -70,13 +69,6 @@ public class TempMaterialAddRequest implements Request<TempMaterialAddRespone> {
         wxHashMap.put("filePath", this.filePath);
         wxHashMap.put("fileName", this.fileName);
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

@@ -1,9 +1,7 @@
 package org.wx.sdk.card.request;
 
 import org.wx.sdk.base.Request;
-import org.wx.sdk.card.respone.CardCodeDecryptRespone;
 import org.wx.sdk.card.respone.CardUserGetCardListRespone;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -65,13 +63,6 @@ public class CardUserGetCardListRequest implements Request<CardUserGetCardListRe
 		wxHashMap.put("openid", this.openid);
 		wxHashMap.put("card_id", this.card_id);
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

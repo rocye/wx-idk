@@ -16,7 +16,7 @@ public class Const {
 	//API密钥
 	public static String PaternerKey = "wxpaykeyguoxin2015wxpaykeyguoxin";
 	//证忆路径
-	public static String CertPath = "F:\\IdeaProjects\\wx-idk\\src\\test\\resources\\apiclient_cert.p12";
+	public static String CertPath = "F:/IdeaProjects/wx-idk/src/test/resources/apiclient_cert.p12";
 	//证书密码
 	public static String CertPass = "1226672102";
 	//商户ID

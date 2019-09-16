@@ -1,9 +1,7 @@
 package org.wx.open.authorize.request;
 
-import org.wx.open.authorize.response.ApiGetAuthorizerOptionRespone;
 import org.wx.open.authorize.response.ApiSetAuthorizerOptionRespone;
 import org.wx.sdk.base.Request;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -68,13 +66,6 @@ public class ApiSetAuthorizerOptionRequest implements Request<ApiSetAuthorizerOp
 		wxHashMap.put("option_name", this.option_name);
 		wxHashMap.put("option_value", this.option_value);
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

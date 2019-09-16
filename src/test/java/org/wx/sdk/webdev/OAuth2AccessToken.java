@@ -48,7 +48,7 @@ public class OAuth2AccessToken {
     public OAuth2TokenGetRespone getWxToken(String appId, String appSecret, String code) {
 		try{
 			OAuth2TokenGetRequest tokenGetReq = new OAuth2TokenGetRequest(appId, appSecret, code);
-			String requestRes = HttpRequestTools.getInstance().sendGet(tokenGetReq.getApiUrl(), tokenGetReq.getUseHttps());
+			String requestRes = HttpRequestTools.getInstance().sendGet(tokenGetReq.getApiUrl(), "UTF-8");
 			OAuth2TokenGetRespone tokenGetRes = JSON.parseObject(requestRes, tokenGetReq.getResponseClass());
 			tokenGetRes.setBody(requestRes);
 
@@ -77,7 +77,7 @@ public class OAuth2AccessToken {
     public OAuth2TokenGetRespone refreshWxToken(String appId, String refreshToken) {
         try{
 			OAuth2TokenRefreshRequest tokenRefreshReq = new OAuth2TokenRefreshRequest(appId, refreshToken);
-			String requestRes = HttpRequestTools.getInstance().sendGet(tokenRefreshReq.getApiUrl(), tokenRefreshReq.getUseHttps());
+			String requestRes = HttpRequestTools.getInstance().sendGet(tokenRefreshReq.getApiUrl(), "UTF-8");
 			OAuth2TokenGetRespone tokenRefreshRes = JSON.parseObject(requestRes, tokenRefreshReq.getResponseClass());
 			tokenRefreshRes.setBody(requestRes);
 

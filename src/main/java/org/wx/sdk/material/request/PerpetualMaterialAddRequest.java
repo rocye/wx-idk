@@ -1,12 +1,11 @@
 package org.wx.sdk.material.request;
 
-import java.io.File;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 import org.wx.sdk.base.Request;
 import org.wx.sdk.material.response.PerpetualMaterialAddRespone;
-
 import com.alibaba.fastjson.JSON;
 
 /**
@@ -47,8 +46,8 @@ public class PerpetualMaterialAddRequest implements Request<PerpetualMaterialAdd
      */
     public PerpetualMaterialAddRequest(String type, String fullFilePath) {
         this.type = type;
-        this.fileName = StringUtils.substringAfterLast(fullFilePath, File.separator);
-        this.filePath = StringUtils.substringBeforeLast(fullFilePath, File.separator) + File.separator;
+        this.fileName = Paths.get(fullFilePath).getFileName().toString();
+        this.filePath = StringUtils.remove(fullFilePath, this.fileName);
     }
     
     /**
@@ -88,13 +87,6 @@ public class PerpetualMaterialAddRequest implements Request<PerpetualMaterialAdd
             wxHashMap.put("description", JSON.toJSONString(this.description));
         }
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

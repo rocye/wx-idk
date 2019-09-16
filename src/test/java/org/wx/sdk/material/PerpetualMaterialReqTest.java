@@ -39,12 +39,12 @@ public class PerpetualMaterialReqTest {
     public void testNewsAddReq() {
         WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
         
-        PerpetualMaterialAddRequest materialAddReq = new PerpetualMaterialAddRequest("thumb", "D:\\Rocye\\Pictures\\460.jpg");
+        PerpetualMaterialAddRequest materialAddReq = new PerpetualMaterialAddRequest("thumb", "D:/Rocye/Pictures/460.jpg");
         PerpetualMaterialAddRespone materialAddRes = wxClient.excute(materialAddReq);
         System.out.println(materialAddRes.getBody());
         String thumbMediaId = materialAddRes.getMedia_id();
         
-        NewsInnerImgAddRequest innerImgAddReq = new NewsInnerImgAddRequest("D:\\Rocye\\Pictures\\11.png");
+        NewsInnerImgAddRequest innerImgAddReq = new NewsInnerImgAddRequest("D:/Rocye/Pictures/11.png");
         NewsInnerImgAddRespone innerImgAddRes = wxClient.excute(innerImgAddReq);
         System.out.println(innerImgAddRes.getBody());
         String img = innerImgAddRes.getUrl();
@@ -77,18 +77,18 @@ public class PerpetualMaterialReqTest {
     public void testPerpetualMediaAddReq() {
         WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
         
-        int typ = 4;
+        int typ = 1;
         String type = "image";
-        String filePath = "D:\\Rocye\\Pictures\\11.png";    //p0WtXLvOv6LRLNPMYZD7DLv7M1fjtuJpGFE_GEvq3co   ,  https:\/\/mmbiz.qlogo.cn\/mmbiz\/TPynjoavL0McYCBP7ovB7wccNichBQhfC7Fd08xVANibib8FOWZKggYL31ia3M6hHxCDEawnMkIO38lwJ4xENRZY9Q\/0?wx_fmt=png
+        String filePath = "D:/Rocye/Pictures/11.png";    //p0WtXLvOv6LRLNPMYZD7DAKNt6S98GgG1W30iHvejhM   ,  http://mmbiz.qpic.cn/mmbiz_png/TPynjoavL0NgcKc2OtZM8lGawuYO7JlHsuZ5kjbMfkJeW1Iych7Hria4O2sO70ibY8dKVPxn0HcI7pN01FgrleRA/0?wx_fmt=png
         if(typ == 2){
             type = "voice";
-            filePath = "D:\\Rocye\\Pictures\\1444288195077.mp3";
+            filePath = "D:/Rocye/Pictures/1444288195077.mp3";
         }else if(typ == 3){
             type = "video";
-            filePath = "D:\\Rocye\\Pictures\\20140423162603.mp4";
+            filePath = "D:/Rocye/Pictures/20140423162603.mp4";
         }else if(typ == 4){
             type = "thumb";
-            filePath = "D:\\Rocye\\Pictures\\chkWxGz.jpg";      //p0WtXLvOv6LRLNPMYZD7DAOWHfVy5LmkVFsLV1Cm8FE
+            filePath = "D:/Rocye/Pictures/desk3.jpg";      //p0WtXLvOv6LRLNPMYZD7DAOWHfVy5LmkVFsLV1Cm8FE
         }
         PerpetualMaterialAddRequest perpetualMaterialAddReq = null;
         if(type.equals("video")){
@@ -107,10 +107,10 @@ public class PerpetualMaterialReqTest {
     @Test
     public void testPerpetualMediaGetReq() {
         WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
-        //String mediaId = "p0WtXLvOv6LRLNPMYZD7DHGgqvIkVktRJrwg2ewlPm0";   //png
+        String mediaId = "p0WtXLvOv6LRLNPMYZD7DAKNt6S98GgG1W30iHvejhM";   //png
         //String mediaId = "p0WtXLvOv6LRLNPMYZD7DHioV-fQZ-WGXMm7WUeiJSA";     //mp3
-        String mediaId = "p0WtXLvOv6LRLNPMYZD7DLv7M1fjtuJpGFE_GEvq3co";     //png deleted
-        String filePath = "C:\\Pictures\\"+ System.currentTimeMillis() +".mp3";
+        //String mediaId = "p0WtXLvOv6LRLNPMYZD7DLv7M1fjtuJpGFE_GEvq3co";     //png deleted
+        String filePath = "D:/Rocye/Pictures/"+ System.currentTimeMillis() +".png";
         PerpetualMediaGetRequest mediaGetReq = new PerpetualMediaGetRequest(mediaId, filePath);
         PerpetualMediaGetRespone mediaGetRes = wxClient.excute(mediaGetReq);
         System.out.println(mediaGetRes.getBody());

@@ -1,6 +1,5 @@
 package org.wx.pay.tool.request;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**

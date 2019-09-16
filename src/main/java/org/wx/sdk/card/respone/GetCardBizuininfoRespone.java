@@ -2,9 +2,7 @@ package org.wx.sdk.card.respone;
 
 import org.wx.sdk.base.Response;
 import org.wx.sdk.card.object.Bizuininfo;
-
 import java.util.List;
-import java.util.Map;
 
 /**
  * 查看卡券详情返回对象

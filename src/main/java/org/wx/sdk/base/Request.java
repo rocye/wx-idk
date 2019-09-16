@@ -28,12 +28,6 @@ public abstract interface Request<T extends Response> {
 	public Map<String, Object> getWxHashMap();
 	
     /**
-     * 获取请求是否是Https
-     * @return 是否https请求
-     */
-    public boolean getUseHttps();
-    
-    /**
      * 请求类型：1-普通Get 2-下载GET 3-普通POST 4-下载POST 5-无参上传   6-有参上传
      * @return 请求类型
      */

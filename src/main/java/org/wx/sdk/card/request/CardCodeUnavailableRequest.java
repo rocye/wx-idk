@@ -2,8 +2,6 @@ package org.wx.sdk.card.request;
 
 import org.wx.sdk.base.Request;
 import org.wx.sdk.card.respone.CardCodeUnavailableRespone;
-import org.wx.sdk.card.respone.CardDeleteRespone;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -71,13 +69,6 @@ public class CardCodeUnavailableRequest implements Request<CardCodeUnavailableRe
     public Map<String, Object> getWxHashMap(){
 		wxHashMap.put("card_id", this.card_id);
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

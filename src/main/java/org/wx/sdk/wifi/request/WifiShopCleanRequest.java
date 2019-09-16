@@ -2,8 +2,6 @@ package org.wx.sdk.wifi.request;
 
 import org.wx.sdk.base.Request;
 import org.wx.sdk.wifi.response.WifiShopCleanRespone;
-import org.wx.sdk.wifi.response.WifiShopGetRespone;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -68,13 +66,6 @@ public class WifiShopCleanRequest implements Request<WifiShopCleanRespone> {
 			wxHashMap.put("ssid", this.ssid);
 		}
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

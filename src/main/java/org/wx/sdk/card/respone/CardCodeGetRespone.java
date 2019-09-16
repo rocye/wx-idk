@@ -3,8 +3,6 @@ package org.wx.sdk.card.respone;
 import org.wx.sdk.base.Response;
 import org.wx.sdk.card.object.Cardx;
 
-import java.util.List;
-
 /**
  * 查询Code返回对象
  * @author Rocye

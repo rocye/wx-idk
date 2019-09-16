@@ -1,6 +1,5 @@
 package org.wx.open.authorize.request;
 
-import org.wx.open.authorize.response.ApiCreatePreauthcodeRespone;
 import org.wx.open.authorize.response.ApiQueryAuthRespone;
 import org.wx.sdk.base.Request;
 import java.util.HashMap;
@@ -58,13 +57,6 @@ public class ApiQueryAuthRequest implements Request<ApiQueryAuthRespone> {
 		wxHashMap.put("component_appid", this.component_appid);
 		wxHashMap.put("authorization_code", this.authorization_code);
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

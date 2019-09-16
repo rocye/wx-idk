@@ -1,9 +1,7 @@
 package org.wx.sdk.wifi.request;
 
 import org.wx.sdk.base.Request;
-import org.wx.sdk.wifi.response.WifiShopGetRespone;
 import org.wx.sdk.wifi.response.WifiStatisticsListRespone;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -74,13 +72,6 @@ public class WifiStatisticsListRequest implements Request<WifiStatisticsListResp
 			wxHashMap.put("shop_id", this.shop_id);
 		}
         return wxHashMap;
-    }
-    
-    /**
-     * 获取请求是否是Https
-     */
-    public boolean getUseHttps(){
-        return true;
     }
     
     /**

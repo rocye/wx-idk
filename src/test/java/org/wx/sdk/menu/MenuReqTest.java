@@ -5,8 +5,6 @@ import java.util.List;
 import org.junit.Test;
 import org.wx.sdk.WxClient;
 import org.wx.sdk.base.Const;
-import org.wx.sdk.material.request.PerpetualMaterialBatGetRequest;
-import org.wx.sdk.material.response.PerpetualMaterialBatGetRespone;
 import org.wx.sdk.menu.object.WXButton;
 import org.wx.sdk.menu.object.WXMatchrule;
 import org.wx.sdk.menu.request.ConditionalAddRequest;
@@ -51,9 +49,9 @@ public class MenuReqTest {
      */
     @Test
     public void testMenuDeleteReq(){
-    	String accessToken = "AnQVscs1vyzDDX9By8DrbxYEAdu9OlpGMzcNZFmTUmrb_Rh8n962A81I4DuL5F1dPhs3S1F58ppL3EPKGi8i1blL_oDrcxoTcfnmNrISzEohzRE5yC8SuMLSoAgEGlfsITUkCFAOZA";
-        WxClient wxClient = new WxClient(accessToken);
-        //WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
+    	//String accessToken = "AnQVscs1vyzDDX9By8DrbxYEAdu9OlpGMzcNZFmTUmrb_Rh8n962A81I4DuL5F1dPhs3S1F58ppL3EPKGi8i1blL_oDrcxoTcfnmNrISzEohzRE5yC8SuMLSoAgEGlfsITUkCFAOZA";
+        //WxClient wxClient = new WxClient(accessToken);
+        WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
         MenuDeleteRequest menuDeleteReq = new MenuDeleteRequest();
         MenuDeleteRespone menuDeleteRes = wxClient.excute(menuDeleteReq);
         System.out.println(menuDeleteRes.getBody());
@@ -64,9 +62,9 @@ public class MenuReqTest {
      */
     @Test
     public void testMenuGetReq(){
-    	String accessToken = "AnQVscs1vyzDDX9By8DrbxYEAdu9OlpGMzcNZFmTUmrb_Rh8n962A81I4DuL5F1dPhs3S1F58ppL3EPKGi8i1blL_oDrcxoTcfnmNrISzEohzRE5yC8SuMLSoAgEGlfsITUkCFAOZA";
-        WxClient wxClient = new WxClient(accessToken);
-        //WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
+    	//String accessToken = "AnQVscs1vyzDDX9By8DrbxYEAdu9OlpGMzcNZFmTUmrb_Rh8n962A81I4DuL5F1dPhs3S1F58ppL3EPKGi8i1blL_oDrcxoTcfnmNrISzEohzRE5yC8SuMLSoAgEGlfsITUkCFAOZA";
+        //WxClient wxClient = new WxClient(accessToken);
+        WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
         MenuGetRequest menuGetReq = new MenuGetRequest();
         MenuGetRespone menuGetRes = wxClient.excute(menuGetReq);
         System.out.println(menuGetRes.getBody());

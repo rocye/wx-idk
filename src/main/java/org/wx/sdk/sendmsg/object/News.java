@@ -1,7 +1,5 @@
 package org.wx.sdk.sendmsg.object;
 
-import java.io.Serializable;
-
 /**
  * 客服（48小时）发送图文（点击跳转到外链）对象
  * @author Rocye

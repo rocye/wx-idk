@@ -100,7 +100,7 @@ public class ThirdpartyAccessToken extends WxToken {
      */
     public Map<String, Object> getNewWxToken() {
         try{
-            String jsonString = HttpRequestTools.getInstance().sendGet(this.thirdApiUrl, false);
+            String jsonString = HttpRequestTools.getInstance().sendGet(this.thirdApiUrl, "UTF-8");
             Map<String, Object> tokenMap = JSON.parseObject(jsonString, new TypeReference<Map<String, Object>>(){});
             long expiresIn = Long.parseLong(tokenMap.get("expires_in").toString());
             tokenMap.put("time", System.currentTimeMillis() + expiresIn*1000);      //当前服务器时间 + 有效时间 = 过期时间

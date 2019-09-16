@@ -1,7 +1,5 @@
 package org.wx.sdk.material.object;
 
-import java.io.Serializable;
-
 /**
  * 永久图文素材请求数据对象
  * @author Rocye

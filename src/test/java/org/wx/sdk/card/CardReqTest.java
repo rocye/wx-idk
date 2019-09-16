@@ -1,6 +1,5 @@
 package org.wx.sdk.card;
 
-import com.google.common.collect.Lists;
 import org.junit.Test;
 import org.wx.sdk.WxClient;
 import org.wx.sdk.base.Const;
@@ -8,10 +7,12 @@ import org.wx.sdk.card.object.*;
 import org.wx.sdk.card.request.*;
 import org.wx.sdk.card.respone.*;
 import org.wx.sdk.token.RedisAccessToken;
-
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class CardReqTest {
 
@@ -21,7 +22,7 @@ public class CardReqTest {
     @Test
     public void testUploadCardImgReq() {
         WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
-        String filePath = "D:\\Rocye\\Pictures\\65191710.jpg";
+        String filePath = "D:/Rocye/Pictures/65191710.jpg";
 		CardImgUploadRequest cardUploadimgReq = new CardImgUploadRequest(filePath);
 		CardImgUploadRespone cardUploadimgRes = wxClient.excute(cardUploadimgReq);
 		//{"url":"http:\/\/mmbiz.qpic.cn\/mmbiz_jpg\/TPynjoavL0PicXuac9XZic3T3qEGe1TcygO0htLekcNPCE9iboichqbiaGrdHpeZlJAgL3hpFQzPgATJTYYOVicbzkjQ\/0"}
@@ -47,8 +48,7 @@ public class CardReqTest {
 		cardMap.put("groupon", groupon);
 		CardCreateRequest createCardReq = new CardCreateRequest(cardMap);
 		CardCreateRespone createCardRes = wxClient.excute(createCardReq);
-		//{"errcode":0,"errmsg":"ok","card_id":"pFYHLvn6sM3GFOTYf0yvIOfNwymA"}
-		//{"errcode":0,"errmsg":"ok","card_id":"pFYHLvuDbMbr241m00CAhtypawpw"}
+		//{"errcode":0,"errmsg":"ok","card_id":"pFYHLvnyR6BTa5UuGeBhVADMdftA"}
 		System.out.println(createCardRes.getBody());
 	}
 
@@ -82,10 +82,10 @@ public class CardReqTest {
 	@Test
 	public void testCreateQrcodeReq() {
 		WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
-		Card card = new Card("pFYHLvuDbMbr241m00CAhtypawpw", null, "111");
+		Card card = new Card("pFYHLvnyR6BTa5UuGeBhVADMdftA", null, "111");
 		CardQrcodeCreateRequest createQrcodeReq = new CardQrcodeCreateRequest(card);
 		CardQrcodeCreateRespone createQrcodeRes = wxClient.excute(createQrcodeReq);
-		//{"errcode":0,"errmsg":"ok","ticket":"gQH78DwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAycEVOcXdSbDFiYi0xY1Z6Qk5zNC0AAgS5r0RaAwSAM_EB","expire_seconds":31536000,"url":"http:\/\/weixin.qq.com\/q\/02pENqwRl1bb-1cVzBNs4-","show_qrcode_url":"https:\/\/mp.weixin.qq.com\/cgi-bin\/showqrcode?ticket=gQH78DwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAycEVOcXdSbDFiYi0xY1Z6Qk5zNC0AAgS5r0RaAwSAM_EB"}
+		//{"errcode":0,"errmsg":"ok","ticket":"gQE17zwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyQnVKbHdSbDFiYi0xblAtd052NHYAAgRzS39dAwSAM_EB","expire_seconds":31536000,"url":"http:\/\/weixin.qq.com\/q\/02BuJlwRl1bb-1nP-wNv4v","show_qrcode_url":"https:\/\/mp.weixin.qq.com\/cgi-bin\/showqrcode?ticket=gQE17zwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyQnVKbHdSbDFiYi0xblAtd052NHYAAgRzS39dAwSAM_EB"}
 		//{"errcode":40078,"errmsg":"invalid card status hint: [hnSlIa0822ard2]"} 卡券已删除
 		System.out.println(createQrcodeRes.getBody());
 	}
@@ -96,8 +96,9 @@ public class CardReqTest {
 	@Test
 	public void testCreateMultiQrcodeReq() {
 		WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
-		List<Card> cardList = Lists.newArrayList(new Card("pFYHLvmkWy9im2fOd60AJRJfw68E", null, "110"),
-												 new Card("pFYHLvhOx_HptVD0PUpbrNixlu0c", null, "111"));
+		List<Card> cardList = new ArrayList<>();
+		cardList.add(new Card("pFYHLvmkWy9im2fOd60AJRJfw68E", null, "110"));
+		cardList.add(new Card("pFYHLvhOx_HptVD0PUpbrNixlu0c", null, "111"));
 		CardMultiQrcodeCreateRequest createQrcodeReq = new CardMultiQrcodeCreateRequest(cardList);
 		CardQrcodeCreateRespone createQrcodeRes = wxClient.excute(createQrcodeReq);
 		//{"errcode":0,"errmsg":"ok","ticket":"gQFi8DwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyb2RXQXdlbDFiYi0xQ3R4VU5xODcAAgSdukFaAwQAp3YA","expire_seconds":7776000,"url":"http:\/\/weixin.qq.com\/q\/02odWAwel1bb-1CtxUNq87","show_qrcode_url":"https:\/\/mp.weixin.qq.com\/cgi-bin\/showqrcode?ticket=gQFi8DwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyb2RXQXdlbDFiYi0xQ3R4VU5xODcAAgSdukFaAwQAp3YA"}
@@ -110,8 +111,9 @@ public class CardReqTest {
 	@Test
 	public void testCreateLandingPageReq() {
 		WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
-		List<MinCard> cardList = Lists.newArrayList(new MinCard("pFYHLvmkWy9im2fOd60AJRJfw68E", "https://mp.weixin.qq.com/misc/getheadimg?fakeid=ofxuouIh3Q9sBzqi0MFUhoEiMaiY&token=771616196&lang=zh_CN"),
-													new MinCard("pFYHLvhOx_HptVD0PUpbrNixlu0c", "https://mp.weixin.qq.com/misc/getheadimg?fakeid=ofxuouHYJ5EDxD561SHtIqvT-VlI&token=771616196&lang=zh_CN"));
+		List<MinCard> cardList = new ArrayList<>();
+		cardList.add(new MinCard("pFYHLvmkWy9im2fOd60AJRJfw68E", "https://mp.weixin.qq.com/misc/getheadimg?fakeid=ofxuouIh3Q9sBzqi0MFUhoEiMaiY&token=771616196&lang=zh_CN"));
+		cardList.add(new MinCard("pFYHLvhOx_HptVD0PUpbrNixlu0c", "https://mp.weixin.qq.com/misc/getheadimg?fakeid=ofxuouHYJ5EDxD561SHtIqvT-VlI&token=771616196&lang=zh_CN"));
 		String banner = "https://mp.weixin.qq.com/misc/getheadimg?fakeid=ofxuouCCMA2QOIoL-uuhGq1wgCBA&token=771616196&lang=zh_CN";
 		CardLandingPageCreateRequest createLandingPageReq = new CardLandingPageCreateRequest(banner, "惠城优惠大派送", true, "SCENE_NEAR_BY", cardList);
 		CardLandingPageCreateRespone createLandingPageRes = wxClient.excute(createLandingPageReq);
@@ -125,7 +127,7 @@ public class CardReqTest {
 	@Test
 	public void testDepositCodeReq() {
 		WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
-		List<String> codeList = Lists.newArrayList("1111","2222","3333","4444","5555","6666");
+		List<String> codeList = Stream.of("1111","2222","3333","4444","5555","6666").collect(Collectors.toList());
 		CardCodeDepositRequest depositCodeReq = new CardCodeDepositRequest("pFYHLvn6sM3GFOTYf0yvIOfNwymA", codeList);
 		CardCodeDepositRespone depositCodeRes = wxClient.excute(depositCodeReq);
 		//{"errcode":40078,"errmsg":"invalid card status hint: [Jer9UA03621482]"}
@@ -150,7 +152,7 @@ public class CardReqTest {
 	@Test
 	public void testCheckCardCodeReq() {
 		WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
-		List<String> codeList = Lists.newArrayList("1111","2222","3333","4444","5555","6666");
+		List<String> codeList = Stream.of("1111","2222","3333","4444","5555","6666").collect(Collectors.toList());
 		CardCodeCheckRequest checkCardCodeReq = new CardCodeCheckRequest("pFYHLvlpbLoaHpnguo6_COiV8Wy0", codeList);
 		CardCodeCheckRespone checkCardCodeRes = wxClient.excute(checkCardCodeReq);
 		//{"errcode":0,"errmsg":"ok","exist_code":[],"not_exist_code":["1111","2222","3333","4444","5555","6666"]}
@@ -175,7 +177,7 @@ public class CardReqTest {
 	@Test
 	public void testSetTestwhitelistReq() {
 		WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
-		List<String> openIdList = Lists.newArrayList(Const.OPENID, "oFYHLviCatnBPDs1XxcXoOePNows");
+		List<String> openIdList = Stream.of(Const.OPENID, "oFYHLviCatnBPDs1XxcXoOePNows").collect(Collectors.toList());
 		CardTestwhitelistSetRequest setTestwhitelistReq = new CardTestwhitelistSetRequest(openIdList);
 		CardTestwhitelistSetRespone setTestwhitelistRes = wxClient.excute(setTestwhitelistReq);
 		//{"errcode":0,"errmsg":"ok","white_list_size":2,"success_openid":["oFYHLvkzNC8P_uZKPS7ppSuHiYwk","oFYHLviCatnBPDs1XxcXoOePNows"],"success_username":[]}
@@ -289,7 +291,7 @@ public class CardReqTest {
 	@Test
 	public void testCardCodeUpdateReq() {
 		WxClient wxClient = new WxClient(new RedisAccessToken(Const.APPID, Const.APPSERCT));
-		CardCodeUpdateRequest cardCodeUpdateReq = new CardCodeUpdateRequest("351433422041", "35143342204190", "pFYHLvuDbMbr241m00CAhtypawpw");
+		CardCodeUpdateRequest cardCodeUpdateReq = new CardCodeUpdateRequest("351433422041", "35143342204190", "pFYHLvnyR6BTa5UuGeBhVADMdftA");
 		CardCodeUpdateRespone cardCodeUpdateRes = wxClient.excute(cardCodeUpdateReq);
 		//{"errcode":40056,"errmsg":"invalid serial code hint: [a.Jfca00401562]"}
 		System.out.println(cardCodeUpdateRes.getBody());

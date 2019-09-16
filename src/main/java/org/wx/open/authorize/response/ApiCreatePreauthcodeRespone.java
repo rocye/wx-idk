@@ -2,8 +2,6 @@ package org.wx.open.authorize.response;
 
 import org.wx.sdk.base.Response;
 
-import java.util.Map;
-
 /**
  * 获取预授权码pre_auth_code返回对象
  * @author Rocye

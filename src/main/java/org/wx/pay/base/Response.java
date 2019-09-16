@@ -1,6 +1,5 @@
 package org.wx.pay.base;
 
-import org.wx.sdk.common.Dom4jUtil;
 import java.util.Map;
 
 /**

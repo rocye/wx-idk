@@ -1,9 +1,7 @@
 package org.wx.sdk.card.respone;
 
 import org.wx.sdk.base.Response;
-
 import java.util.List;
-import java.util.Map;
 
 /**
  * 批量查询卡券列表返回对象
