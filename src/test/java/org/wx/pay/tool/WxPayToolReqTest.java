@@ -1,25 +1,20 @@
 package org.wx.pay.tool;
 
-import com.alibaba.fastjson.JSON;
+import java.util.Date;
+import java.util.Random;
 import org.junit.Test;
 import org.wx.pay.WxPayClient;
-import org.wx.pay.mode.request.CloseOrderRequest;
-import org.wx.pay.mode.request.OrderQueryRequest;
-import org.wx.pay.mode.request.UnifiedOrderRequest;
-import org.wx.pay.mode.response.CloseOrderRespone;
-import org.wx.pay.mode.response.OrderQueryRespone;
-import org.wx.pay.mode.response.UnifiedOrderRespone;
-import org.wx.pay.tool.request.*;
+import org.wx.pay.tool.request.GetQyTransferinfoRequest;
+import org.wx.pay.tool.request.GetRedpackInfoRequest;
+import org.wx.pay.tool.request.QyTransfersRequest;
+import org.wx.pay.tool.request.SendGroupRedpackRequest;
+import org.wx.pay.tool.request.SendRedpackRequest;
 import org.wx.pay.tool.response.GetQyTransferinfoRespone;
 import org.wx.pay.tool.response.GetRedpackInfoRespone;
 import org.wx.pay.tool.response.QyTransfersRespone;
 import org.wx.pay.tool.response.SendRedpackRespone;
 import org.wx.sdk.base.Const;
 import org.wx.sdk.common.DateUtil;
-import org.wx.sdk.common.Dom4jUtil;
-import java.util.Date;
-import java.util.Map;
-import java.util.Random;
 
 /**
  * 支付工具单元测试
