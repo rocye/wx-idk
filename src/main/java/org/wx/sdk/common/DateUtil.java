@@ -1,5 +1,7 @@
 package org.wx.sdk.common;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -8,15 +10,13 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.log4j.Logger;
-
 /**
  * 与时间日期相关的工具类
  * @version 2013-05-17
  */
 public class DateUtil {
     /** 日志对象 */
-    private static final Logger logger = Logger.getLogger(DateUtil.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(DateUtil.class.getName());
     /** 时间格式 yyyy-MM-dd HH:mm:ss */
     private static final SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     /** 时间格式 yyyy-MM-dd */

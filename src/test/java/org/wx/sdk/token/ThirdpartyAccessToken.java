@@ -1,7 +1,9 @@
 package org.wx.sdk.token;
 
 import java.util.Map;
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.wx.common.RedisConnectionFactory;
 import org.wx.sdk.base.WxToken;
 import org.wx.sdk.base.request.HttpRequestTools;
@@ -17,7 +19,7 @@ import com.alibaba.fastjson.TypeReference;
  */
 public class ThirdpartyAccessToken extends WxToken {
     /** 日志对象 */
-    private final static Logger logger = Logger.getLogger(ThirdpartyAccessToken.class.getName());
+    private final static Logger logger = LoggerFactory.getLogger(ThirdpartyAccessToken.class.getName());
     
     /** 第三方接口地址 */
     private String thirdApiUrl;

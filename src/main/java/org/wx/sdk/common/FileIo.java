@@ -7,7 +7,8 @@ import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import org.apache.commons.io.FileUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 文件操作类
@@ -15,7 +16,7 @@ import org.apache.log4j.Logger;
  * @version 2017.02.28
  */
 public class FileIo {
-	private final static Logger logger = Logger.getLogger(FileIo.class.getName());
+	private final static Logger logger = LoggerFactory.getLogger(FileIo.class.getName());
     
 	/**
 	 * 写文本文件内容

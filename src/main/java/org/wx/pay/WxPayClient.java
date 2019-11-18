@@ -2,7 +2,8 @@ package org.wx.pay;
 
 import com.alibaba.fastjson.JSON;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.wx.pay.base.HttpsRequestTools;
 import org.wx.pay.base.Request;
 import org.wx.pay.base.Response;
@@ -17,7 +18,7 @@ import java.util.Map;
  * @version 2017.11.14
  */
 public class WxPayClient {
-	private final static Logger logger = Logger.getLogger(WxPayClient.class.getName());
+	private final static Logger logger = LoggerFactory.getLogger(WxPayClient.class.getName());
 
 	/**
 	 * 商户API密钥

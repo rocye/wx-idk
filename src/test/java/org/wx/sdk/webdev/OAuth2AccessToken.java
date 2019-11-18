@@ -1,7 +1,8 @@
 package org.wx.sdk.webdev;
 
 import com.alibaba.fastjson.JSON;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.wx.sdk.base.request.HttpRequestTools;
 import org.wx.sdk.webdev.request.OAuth2TokenGetRequest;
 import org.wx.sdk.webdev.request.OAuth2TokenRefreshRequest;
@@ -15,7 +16,7 @@ import org.wx.sdk.webdev.response.OAuth2TokenGetRespone;
  */
 public class OAuth2AccessToken {
     /** 日志对象 */
-    private final static Logger logger = Logger.getLogger(OAuth2AccessToken.class.getName());
+    private final static Logger logger = LoggerFactory.getLogger(OAuth2AccessToken.class.getName());
 
 	/**
 	 * 私用构造函数

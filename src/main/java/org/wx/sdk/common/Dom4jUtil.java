@@ -1,11 +1,12 @@
 package org.wx.sdk.common;
 
 import java.util.*;
-import org.apache.log4j.Logger;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * dom4j解析XML工具类
@@ -13,7 +14,7 @@ import org.dom4j.Element;
  * @version 2019.09.06
  */
 public class Dom4jUtil {
-    private final static Logger logger = Logger.getLogger(Dom4jUtil.class.getName());
+    private final static Logger logger = LoggerFactory.getLogger(Dom4jUtil.class.getName());
 
     /**
      * 解析XML字串得到Map对象

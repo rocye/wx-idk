@@ -29,7 +29,8 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.ssl.SSLContexts;
 import org.apache.http.util.EntityUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.wx.sdk.common.FileIo;
 
 /**
@@ -39,7 +40,7 @@ import org.wx.sdk.common.FileIo;
  */
 public class HttpRequestTools {
 	/** 日志对象 */
-    private final static Logger logger = Logger.getLogger(HttpRequestTools.class.getName());
+    private final static Logger logger = LoggerFactory.getLogger(HttpRequestTools.class.getName());
     /** 连接超时时间 */
 	public static final int CONNECTION_TIMEOUT = 5000;
 	/** 请求超时时间 */

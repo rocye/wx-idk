@@ -1,13 +1,13 @@
 package org.wx.sdk.token;
 
 import java.util.Map;
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.wx.common.RedisConnectionFactory;
 import org.wx.sdk.base.WxToken;
-
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
-
 import redis.clients.jedis.Jedis;
 
 /**
@@ -18,7 +18,7 @@ import redis.clients.jedis.Jedis;
  */
 public class RedisAccessToken extends WxToken {
     /** 日志对象 */
-    private final static Logger logger = Logger.getLogger(RedisAccessToken.class.getName());
+    private final static Logger logger = LoggerFactory.getLogger(RedisAccessToken.class.getName());
 
     /**
      * 构造函数

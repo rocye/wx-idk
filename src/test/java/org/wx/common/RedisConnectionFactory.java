@@ -1,6 +1,7 @@
 package org.wx.common;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
@@ -11,7 +12,7 @@ import redis.clients.jedis.JedisPoolConfig;
  * @version 2015-05-22
  */
 public class RedisConnectionFactory {
-    private final static Logger logger = Logger.getLogger(RedisConnectionFactory.class.getName());
+    private final static Logger logger = LoggerFactory.getLogger(RedisConnectionFactory.class.getName());
     
     private static JedisPool pool = null;
     private static int _dbNum = 0;

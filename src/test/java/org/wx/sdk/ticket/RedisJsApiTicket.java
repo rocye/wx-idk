@@ -2,7 +2,9 @@ package org.wx.sdk.ticket;
 
 import java.util.Arrays;
 import java.util.Map;
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.wx.common.RedisConnectionFactory;
 import org.wx.sdk.WxClient;
 import org.wx.sdk.base.WxConfig;
@@ -22,7 +24,7 @@ import redis.clients.jedis.Jedis;
  * @version 2017-02-21
  */
 public class RedisJsApiTicket extends WxTicket{
-    private final static Logger logger = Logger.getLogger(RedisJsApiTicket.class.getName());
+    private final static Logger logger = LoggerFactory.getLogger(RedisJsApiTicket.class.getName());
 
     /**
      * 私用构造函数

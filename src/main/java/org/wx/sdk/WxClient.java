@@ -4,7 +4,8 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.wx.sdk.base.Request;
 import org.wx.sdk.base.Response;
 import org.wx.sdk.base.WxToken;
@@ -20,7 +21,7 @@ import com.alibaba.fastjson.JSON;
  * @version 2016-03-24
  */
 public class WxClient {
-    private final static Logger logger = Logger.getLogger(WxClient.class.getName());
+    private final static Logger logger = LoggerFactory.getLogger(WxClient.class.getName());
     
     /** 微信接口请求凭证 {@link WxToken} */
     private WxToken wxToken;

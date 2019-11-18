@@ -1,9 +1,9 @@
 package org.wx.pay.common;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.wx.sdk.common.MD5;
-
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.UnsupportedEncodingException;
@@ -17,7 +17,7 @@ import java.util.TreeMap;
  * @version 2017.11.21
  */
 public class WxPayUtil {
-	private final static Logger logger = Logger.getLogger(WxPayUtil.class.getName());
+	private final static Logger logger = LoggerFactory.getLogger(WxPayUtil.class.getName());
 
 	/**
 	 * 组装签名的字段

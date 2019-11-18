@@ -1,8 +1,8 @@
 package org.wx.pay.base;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.wx.sdk.common.FileIo;
-
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.KeyManagerFactory;
@@ -20,7 +20,7 @@ import java.security.SecureRandom;
  */
 public class HttpsRequestTools {
 	/** 日志对象 */
-    private final static Logger logger = Logger.getLogger(HttpsRequestTools.class.getName());
+    private final static Logger logger = LoggerFactory.getLogger(HttpsRequestTools.class.getName());
     /** 连接超时时间(单位毫秒) */
     private int connectTimeout = 5000;
     /** 读取超时时间(单位毫秒) */
